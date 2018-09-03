@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="openId 和 unionId 官方文档  openId: 用户对于某一应用里的唯一标识, 如同一用户的订阅号, 服务好, 小程序1, 小程序2的 openId 是相互独立的. openId 可以静默获取. unionId: 在同一个微信开放平台里绑定的移动应用, 网站应用, 公众号, 小程序或第三方平台, 通过一样的 unionId 来标识同一个用户. unionId 的获取需要得到用户的授权">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T08:32:20.890Z">
+<meta property="og:updated_time" content="2018-09-03T15:02:47.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于 openId 和 unionId 的那些事">
 <meta name="twitter:description" content="openId 和 unionId 官方文档  openId: 用户对于某一应用里的唯一标识, 如同一用户的订阅号, 服务好, 小程序1, 小程序2的 openId 是相互独立的. openId 可以静默获取. unionId: 在同一个微信开放平台里绑定的移动应用, 网站应用, 公众号, 小程序或第三方平台, 通过一样的 unionId 来标识同一个用户. unionId 的获取需要得到用户的授权">
@@ -407,6 +407,7 @@
 <p>openId: 用户对于某一应用里的唯一标识, 如同一用户的订阅号, 服务好, 小程序1, 小程序2的 openId 是相互独立的. openId 可以静默获取.</p>
 <p>unionId: 在同一个<a href="https://open.weixin.qq.com/" target="_blank" rel="noopener">微信开放平台</a>里绑定的移动应用, 网站应用, 公众号, 小程序或第三方平台, 通过一样的 unionId 来标识同一个用户. unionId 的获取需要得到用户的授权, 或用户曾在同一平台的其他应用登录/授权过.</p>
 <p>所以, 如果只有一个应用, 那么 openId 是够用的, 但为了后续开发方便, 还是使用 unionId 比较好.</p>
+<p>ps: openId 长度为12, unionId 长度为28</p>
 <a id="more"></a>
 <h1 id="如何获取-openId"><a href="#如何获取-openId" class="headerlink" title="如何获取 openId"></a>如何获取 openId</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">wx.login(&#123;</span><br><span class="line">    success: <span class="function"><span class="params">loginCode</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发送 res.code 到后台换取 openId, sessionKey, unionId, 注意:一个code只能用一次</span></span><br><span class="line">    getApp().getOpenId(loginCode);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*这里的获取只能在测试环境中实现, 实际应用时因为 api.weixin.qq.com 不在微信许可的域名中,</span></span><br><span class="line"><span class="comment">  所以需要把 loginCode.code 传给服务器, 让服务器向微信请求获得 appid*/</span></span><br><span class="line">getOpenId: <span class="function"><span class="keyword">function</span>(<span class="params">loginCode</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">var</span> appid = <span class="string">'wx19110c392ee93159'</span>;<span class="comment">//小程序appid</span></span><br><span class="line">    <span class="keyword">var</span> secret = <span class="string">'9223a34383d998f0d531ec796c297ead'</span>;<span class="comment">//小程序secret</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: <span class="string">'https://api.weixin.qq.com/sns/jscode2session?appid='</span> + appid + <span class="string">'&amp;secret='</span> + secret +<span class="string">'&amp;grant_type=authorization_code&amp;js_code='</span> + loginCode.code,</span><br><span class="line">      header: &#123;</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        that.globalData.openId = res.data.openid;<span class="comment">//获取openid</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'openid in app.js: '</span>+that.globalData.openId);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 <h3 id="关于-api-返回的数据"><a href="#关于-api-返回的数据" class="headerlink" title="关于 api 返回的数据:"></a>关于 api 返回的数据:</h3><p>不满足 unionId 下发条件的情况下返回的参数:</p>
@@ -427,6 +428,18 @@
 <p>用户未授权, 调用这个接口直接进入 fail 回调</p>
 <p>用户授权过, 可以通过这个接口获得用户信息</p>
 <p>将这个方法写再 welcome 界面的判断中</p>
+<h2 id="解密-encryptedData-后没有-unionId"><a href="#解密-encryptedData-后没有-unionId" class="headerlink" title="解密 encryptedData 后没有 unionId?"></a>解密 encryptedData 后没有 unionId?</h2><p>微信毒瘤, 没说清楚 unionId 的必要条件, 艹: 将小程序绑定到微信开放平台</p>
+<p>如果暂时不想交那300块, 那么要求小程序主体, 及开放平台主体是一样的, 及拥有者是同一人</p>
+<h1 id="如何解密-unionId"><a href="#如何解密-unionId" class="headerlink" title="如何解密 unionId"></a>如何解密 unionId</h1><p>需要元素: 加密的数据: encryptedData, 密钥: session_key( 通过 wx.login 获得的临时登录凭证 loginCode 向微信请求后获得, session_key 有时效性 ), 初始向量: iv</p>
+<p>详细解密步骤见参考链接:</p>
+<p>参考链接( 都是 java 的):</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/nosqlcoco/p/6105749.html" target="_blank" rel="noopener">微信小程序之用户数据解密(七)</a></p>
+<p><a href="https://blog.csdn.net/It_BeeCoder/article/details/77582648" target="_blank" rel="noopener">微信小程序之获取并解密用户数据（获取openId、unionId）</a></p>
+<p>顺便吐槽一下, 他们的代码块怎么这么乱(码)…</p>
+</blockquote>
+<p>可能会缺失的包( 由maven引入 ):</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- AES.class解密用的包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bouncycastle<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>bcprov-jdk15on<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.60<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引用解密包所需 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-codec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="后续问题"><a href="#后续问题" class="headerlink" title="后续问题"></a>后续问题</h1><p>微信小程序会记住用户是否授权过, 当用户第一次授权时, 通过服务器解密可以获取到用户的 unionid. 此时如果用户继续操作, 进行注册操作, 那么将 unionid, 用户注册信息存入临时用户表, 等待管理员确认.</p>
 <p><strong>用户第二次进入小程序, 通过 wx.getUserInfo 获得数据</strong>, 此时用户未得到确认, 进入等待页面</p>
 <p>管理员确认后, unionid, 用户注册信息存入正式用户表</p>
@@ -573,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -595,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -664,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#openId-和-unionId"><span class="nav-number">1.</span> <span class="nav-text">openId 和 unionId</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取-openId"><span class="nav-number">2.</span> <span class="nav-text">如何获取 openId</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-api-返回的数据"><span class="nav-number">2.0.1.</span> <span class="nav-text">关于 api 返回的数据:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取-unionId"><span class="nav-number">3.</span> <span class="nav-text">如何获取 unionId</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户初次在该平台的应用登录"><span class="nav-number">3.1.</span> <span class="nav-text">用户初次在该平台的应用登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户已经关注了公众号-或曾登录同一平台内的其他应用"><span class="nav-number">3.2.</span> <span class="nav-text">用户已经关注了公众号, 或曾登录同一平台内的其他应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-wx-getUserInfo"><span class="nav-number">3.3.</span> <span class="nav-text">关于 wx.getUserInfo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续问题"><span class="nav-number">4.</span> <span class="nav-text">后续问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#openId-和-unionId"><span class="nav-number">1.</span> <span class="nav-text">openId 和 unionId</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取-openId"><span class="nav-number">2.</span> <span class="nav-text">如何获取 openId</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-api-返回的数据"><span class="nav-number">2.0.1.</span> <span class="nav-text">关于 api 返回的数据:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何获取-unionId"><span class="nav-number">3.</span> <span class="nav-text">如何获取 unionId</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户初次在该平台的应用登录"><span class="nav-number">3.1.</span> <span class="nav-text">用户初次在该平台的应用登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户已经关注了公众号-或曾登录同一平台内的其他应用"><span class="nav-number">3.2.</span> <span class="nav-text">用户已经关注了公众号, 或曾登录同一平台内的其他应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-wx-getUserInfo"><span class="nav-number">3.3.</span> <span class="nav-text">关于 wx.getUserInfo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解密-encryptedData-后没有-unionId"><span class="nav-number">3.4.</span> <span class="nav-text">解密 encryptedData 后没有 unionId?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何解密-unionId"><span class="nav-number">4.</span> <span class="nav-text">如何解密 unionId</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续问题"><span class="nav-number">5.</span> <span class="nav-text">后续问题</span></a></li></ol></div>
             
 
           </div>
