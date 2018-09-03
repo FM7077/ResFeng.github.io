@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/</loc>
+    
+    <lastmod>2018-09-03T16:28:37.139Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.fm7077.ml/2018/09/03/markdown/</loc>
     
     <lastmod>2018-09-03T16:25:21.354Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.fm7077.ml/2018/09/03/something-about-unionId/</loc>
     
     <lastmod>2018-09-03T16:25:01.529Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/</loc>
-    
-    <lastmod>2018-09-03T16:24:44.972Z</lastmod>
     
   </url>
   
