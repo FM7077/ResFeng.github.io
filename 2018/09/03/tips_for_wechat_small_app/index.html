@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="微信小程序,web服务器,java," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一颗牛肉丸的回忆">
-<meta property="og:url" content="http://blog.fm7077.ml/index.html">
+<meta name="description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
+<meta name="keywords" content="微信小程序,web服务器,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序的那些坑">
+<meta property="og:url" content="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/index.html">
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
+<meta property="og:description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-04T08:18:07.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一颗牛肉丸的回忆">
+<meta name="twitter:title" content="微信小程序的那些坑">
+<meta name="twitter:description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.fm7077.ml/"/>
+  <link rel="canonical" href="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/"/>
 
 
 
 
 
-  <title>一颗牛肉丸的回忆</title>
+  <title>微信小程序的那些坑 | 一颗牛肉丸的回忆</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,9 +286,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -314,9 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/tips_for_wechat_small_app/" itemprop="url">微信小程序的那些坑</a></h1>
+          <h1 class="post-title" itemprop="name headline">微信小程序的那些坑</h1>
         
 
         <div class="post-meta">
@@ -399,179 +401,56 @@
       
 
       
-        
-          <blockquote>
+        <blockquote>
 <p>一些关于做微信小程序时遇到的问题及一些小技巧</p>
 <p>顺便再次吐槽一下, 官方文档写得太烂了</p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/tips_for_wechat_small_app/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
+<a id="more"></a>
+<h1 id="Toast-现已更改为-showToast"><a href="#Toast-现已更改为-showToast" class="headerlink" title="Toast 现已更改为 showToast"></a>Toast 现已更改为 showToast</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">      title: <span class="string">'内容'</span>,</span><br><span class="line">      icon: <span class="string">'提示图标'</span>,</span><br><span class="line">      duration: 保持时间, 单位为毫秒</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="js-中动态更改组件属性"><a href="#js-中动态更改组件属性" class="headerlink" title="js 中动态更改组件属性"></a>js 中动态更改组件属性</h1><ol>
+<li>组件要动态变化的属性设置一个别名</li>
+<li>在 js 文件中的 data 里新建一个变量, 与别名一样的名字</li>
+<li>在函数中动态更改</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"confirmSub"</span> <span class="attr">loading</span>=<span class="string">"&#123;&#123;loading&#125;&#125;"</span>&gt;</span>确认<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">  loading: <span class="literal">false</span>,</span><br><span class="line">&#125;,</span><br><span class="line">confirmSub: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    loading: !<span class="keyword">this</span>.data.loading,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="监听器里调用上一级变量"><a href="#监听器里调用上一级变量" class="headerlink" title="监听器里调用上一级变量"></a>监听器里调用上一级变量</h1><p>在监听器或定时器里使用的参数变量定义时必须加 const 关键字</p>
+<p>this 转换为 that, 用来访问上一级的变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">testListener: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span>;</span><br><span class="line">    that.setData(&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        that.setData(&#123;</span><br><span class="line">            testConst: !that.data.testConst,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="输入框剔除无效字符"><a href="#输入框剔除无效字符" class="headerlink" title="输入框剔除无效字符"></a>输入框剔除无效字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeSpecialChar</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> pattern = <span class="regexp">/[0-9]&#123;1&#125;/</span>; <span class="comment">// 除了0-9其余全部剔除</span></span><br><span class="line">  <span class="keyword">var</span> rs = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> single = s.substr(i,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(single.match(pattern))&#123;</span><br><span class="line">      rs = rs+single;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> rs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="点击按钮后获取输入框内容"><a href="#点击按钮后获取输入框内容" class="headerlink" title="点击按钮后获取输入框内容"></a>点击按钮后获取输入框内容</h1><p>一种是把输入框和按钮放在一个表格即 <form> 中, 然后输入框设置别名, 表格绑定事件, 在事件回调函数中通过别名获取输入框内容</form></p>
+<p>另一种是每个输入框都绑定事件, 同时为每个输入框设一个变量来实时接收输入框的文字, 再在按钮的事件中通过变量来间接读取</p>
+<h2 id="模板引用"><a href="#模板引用" class="headerlink" title="模板引用"></a>模板引用</h2><ol>
+<li>先建立模板: xxx.wxml</li>
+<li>在要使用这个模板的页面引用模板: &lt;import src=”../../xxx.wxml&gt; 并在该页面使用模板 <template is="模板名" data="要传入的参数"></template></li>
+</ol>
+<h1 id="Please-do-not-register-multiple-Pages-in-undefined-js-错误"><a href="#Please-do-not-register-multiple-Pages-in-undefined-js-错误" class="headerlink" title="Please do not register multiple Pages in undefined.js 错误"></a>Please do not register multiple Pages in undefined.js 错误</h1><p>检查 app.js 中是否有 Page({}) 删去即可</p>
+<h2 id="关于-input-的-maxlength"><a href="#关于-input-的-maxlength" class="headerlink" title="关于 input 的 maxlength"></a>关于 input 的 maxlength</h2><p>在模拟器上测试是正常的, 但在手机上测试时, 得输入到 maxlength 指定的长度才不会被认为是空的.</p>
+<p>为解决此 bug, 直接不采用 maxlength, 而是在监听器里实时判断输入字符长度, 截取规定长度字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeExtraWorld</span>(<span class="params">s, num</span>) </span>&#123;<span class="comment">//保留字符串前几位, s: 要改的字符串, num: 设置长度</span></span><br><span class="line">  <span class="keyword">if</span>(s.length &lt;= num)&#123;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> rs = s.slice(<span class="number">0</span>, num);</span><br><span class="line">    <span class="keyword">return</span> rs;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="flex-流布局的居中要点"><a href="#flex-流布局的居中要点" class="headerlink" title="flex 流布局的居中要点"></a>flex 流布局的居中要点</h2><p>水平居中: justify-content: center;</p>
+<p>垂直居中: align-items: center;</p>
+<font color="#ee3333" blod="" size="17">控件要设置宽和高 !</font>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/something-about-unionId/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/something-about-unionId/" itemprop="url">关于 openId 和 unionId 的那些事</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T08:44:49+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信/" itemprop="url" rel="index">
-                    <span itemprop="name">微信</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/something-about-unionId/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/something-about-unionId/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/unionID.html" target="_blank" rel="noopener">官方文档</a></p>
-<p>开发小程序, openId 和 unionId 几乎是没法绕过去的, 但官方文档又讲得不是那么详细,还是自己总结一下以备自己哪天忘了</p>
+<h1 id="POST-请求相关"><a href="#POST-请求相关" class="headerlink" title="POST 请求相关"></a>POST 请求相关</h1><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-request.html#wxrequestobject" target="_blank" rel="noopener">官方文档</a></p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/something-about-unionId/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">'127.0.0.1'</span>, <span class="comment">//服务器链接</span></span><br><span class="line">  method: <span class="string">'POST'</span>, <span class="comment">//请求类型, 注意大写</span></span><br><span class="line">  data: &#123;<span class="comment">//请求数据</span></span><br><span class="line">     x: <span class="string">''</span> ,</span><br><span class="line">     y: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  header: &#123;</span><br><span class="line">      <span class="comment">//默认值是: 'content-type': 'application/json', 会对数据进行 JSON 序列化</span></span><br><span class="line">  	<span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span> <span class="comment">//一般使用这个, 小程序会将数据转换成 String</span></span><br><span class="line">  &#125;,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)<span class="comment">//服务端返回的数据</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.header)<span class="comment">//服务端返回的 HTTP Response Header</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.statusCode)<span class="comment">//服务端返回的 HTTP 状态码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="HTTPS-证书"><a href="#HTTPS-证书" class="headerlink" title="HTTPS 证书"></a>HTTPS 证书</h1><p>看到有人吐槽, 赶紧先 mark 下</p>
+<p>https 不要用startcom提供的免费证书! </p>
+<h1 id="中止代码执行"><a href="#中止代码执行" class="headerlink" title="中止代码执行"></a>中止代码执行</h1><p>需求: 有时候需要判断是否能联网, 用户是否存在, 若为否则跳转到404界面或其他错误界面, 并同时中止小程序继续进行</p>
+<p>例: 在微信小程序加载的时候判断是否能连上服务器, 若不能则跳转 error 界面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js 代码</span></span><br><span class="line">onLaunch: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.testConnect(),</span><br><span class="line">     其余代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testConnect: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">  		url: <span class="keyword">this</span>.globalData.serverAddress + <span class="string">'/CheckConnection'</span>,</span><br><span class="line">  		method: <span class="string">'POST'</span>,</span><br><span class="line">  		data: &#123;</span><br><span class="line">   			 test: <span class="string">'1'</span></span><br><span class="line">        &#125;,</span><br><span class="line">  		header: &#123;</span><br><span class="line">    			<span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">  		&#125;,</span><br><span class="line">  		success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (res.statusCode === <span class="number">200</span> &amp; res.data === <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'测试成功'</span>)</span><br><span class="line">                其余代码&lt;-------------------------------------</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                wx.navigateTo(&#123;</span><br><span class="line">                url: <span class="string">'/pages/error/error'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'测试失败'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>如果不进行特别处理, 其余代码还是会被运行</p>
+<p>emmmmm, 傻逼了, 其实只要把<em>其余代码</em>放在 if 里就可以了</p>
+<p>然后这个时候你会发现 else 中的跳转并不起作用</p>
+<p>然后我就用了 ==wx.reLaunch== 就可以跳转了, 原因暂不知. 关于 wx.reLaunch 的介绍见下面</p>
+<h1 id="你可能不知道的-wx-redirectTo-wx-reLaunch"><a href="#你可能不知道的-wx-redirectTo-wx-reLaunch" class="headerlink" title="你可能不知道的 wx.redirectTo, wx.reLaunch"></a>你可能不知道的 wx.redirectTo, wx.reLaunch</h1><p>一般用的可能 wx.navigate 比较多, 它可以跳转到5层级以内的任何页面, 跳转后也能返回上一层页面, 超过5个层级不会跳转</p>
+<p>为了解决这个问题, 找到了 wx.redirectTo, 它可以跳转到任何层级的页面, 但跳转过去后无法返回到上一层页面. 对于不想再返回的页面, 导向的时候就可以用 wx.redirectTo</p>
+<p>wx.reLaunch: 清空页面栈, 导航到指定页面.</p>
+<h1 id="遇到-bug"><a href="#遇到-bug" class="headerlink" title="遇到 bug"></a>遇到 bug</h1><h2 id="本地测试-localhost-服务器本地ip"><a href="#本地测试-localhost-服务器本地ip" class="headerlink" title="本地测试 localhost / 服务器本地ip"></a>本地测试 localhost / 服务器本地ip</h2><p>用模拟器测试时如果请求服务器链接为 localhost 那么没什么问题, 但如果用的是服务器本地 ip 时会报503 错误, 但服务器又能收到模拟器发出的消息, 真是神奇.</p>
+<p>如果用真机测试那么当然不能写 localhost 了, 而应该写 服务器本地 ip, 这时就很正常~ 就是很神奇</p>
+
       
     </div>
     
@@ -586,336 +465,44 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/04/how-to-use-IngressPortalBot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/how-to-use-IngressPortalBot/" itemprop="url">如何使用 IngressPortalBot 这个机器人</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T17:02:21+08:00">
-                2018-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/微信小程序/" rel="tag"># 微信小程序</a>
           
-
+            <a href="/tags/web服务器/" rel="tag"># web服务器</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/04/how-to-use-IngressPortalBot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/04/how-to-use-IngressPortalBot/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/java/" rel="tag"># java</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <blockquote>
-<p><a href="https://telegram.me/ingressportalbot" target="_blank" rel="noopener">该 bot telegram 链接</a></p>
-<p>为了及时了解潮汕地区在哪里过了什么po, 新建了一个频道, 并把这个 IngressPortalBot 放进去</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/how-to-use-IngressPortalBot/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/03/markdown/" rel="next" title="MarkDown 简介 [转]">
+                <i class="fa fa-chevron-left"></i> MarkDown 简介 [转]
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/how_to_build_your_own_blog_website/" itemprop="url">如何创建一个属于自己的博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T08:44:49+08:00">
-                2018-09-03
-              </time>
+              <a href="/2018/09/04/how-to-use-IngressPortalBot/" rel="prev" title="如何使用 IngressPortalBot 这个机器人">
+                如何使用 IngressPortalBot 这个机器人 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/how_to_build_your_own_blog_website/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/how_to_build_your_own_blog_website/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>关于我是如何创建这个博客网站的一些笔记</p>
-<p>框架: hexo</p>
-<p>域名: 免费域名</p>
-<p>托管网站: github.io</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/how_to_build_your_own_blog_website/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -925,338 +512,32 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/markdown/" itemprop="url">MarkDown 简介 [转]</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:09:26+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/markdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这是一篇用来练手的备忘笔记</p>
-<p><a href="http://note.youdao.com/iyoudao/?p=2411" target="_blank" rel="noopener">有道云笔记MarkDown指南</a> (本文大部分内容来自该指南)</p>
-<p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">流程图部分的原文</a></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/02/Hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/Hello-world/" itemprop="url">Hello, world</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T14:09:33+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/02/Hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/02/Hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="这是一篇本博客网站的-Hello-world"><a href="#这是一篇本博客网站的-Hello-world" class="headerlink" title="这是一篇本博客网站的 Hello world"></a>这是一篇本博客网站的 Hello world</h1><blockquote>
-<p>其实这是一篇流水账</p>
-</blockquote>
-<h2 id="为什么有这个博客"><a href="#为什么有这个博客" class="headerlink" title="为什么有这个博客"></a>为什么有这个博客</h2><p>八月份做了一套完整的安卓程序, 包括 app, 后台. 期间查了许多资料, 学习到很多新东西, 但也发现了一些细节如果不及时记下来会很快遗忘的, 遂萌生了写博客的想法.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/02/Hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1277,8 +558,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1378,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toast-现已更改为-showToast"><span class="nav-number">1.</span> <span class="nav-text">Toast 现已更改为 showToast</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js-中动态更改组件属性"><span class="nav-number">2.</span> <span class="nav-text">js 中动态更改组件属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听器里调用上一级变量"><span class="nav-number">3.</span> <span class="nav-text">监听器里调用上一级变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入框剔除无效字符"><span class="nav-number">4.</span> <span class="nav-text">输入框剔除无效字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击按钮后获取输入框内容"><span class="nav-number">5.</span> <span class="nav-text">点击按钮后获取输入框内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板引用"><span class="nav-number">5.1.</span> <span class="nav-text">模板引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Please-do-not-register-multiple-Pages-in-undefined-js-错误"><span class="nav-number">6.</span> <span class="nav-text">Please do not register multiple Pages in undefined.js 错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-input-的-maxlength"><span class="nav-number">6.1.</span> <span class="nav-text">关于 input 的 maxlength</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-流布局的居中要点"><span class="nav-number">6.2.</span> <span class="nav-text">flex 流布局的居中要点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST-请求相关"><span class="nav-number">7.</span> <span class="nav-text">POST 请求相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS-证书"><span class="nav-number">8.</span> <span class="nav-text">HTTPS 证书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中止代码执行"><span class="nav-number">9.</span> <span class="nav-text">中止代码执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你可能不知道的-wx-redirectTo-wx-reLaunch"><span class="nav-number">10.</span> <span class="nav-text">你可能不知道的 wx.redirectTo, wx.reLaunch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到-bug"><span class="nav-number">11.</span> <span class="nav-text">遇到 bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地测试-localhost-服务器本地ip"><span class="nav-number">11.1.</span> <span class="nav-text">本地测试 localhost / 服务器本地ip</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1524,6 +830,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1541,6 +851,18 @@
       <script id="dsq-count-scr" src="https://fm7077.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/';
+          this.page.identifier = '2018/09/03/tips_for_wechat_small_app/';
+          this.page.title = '微信小程序的那些坑';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://fm7077.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
