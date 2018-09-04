@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="官方github地址 博客框架: hexo    博客主题: next        MarkDown 工具: Typora hexo 不能直接显示流程图, 平时是没多大关系, 但总会有要用到的时候">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T17:02:30.914Z">
+<meta property="og:updated_time" content="2018-09-04T17:05:42.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何让 hexo 显示 Typora 的流程图">
 <meta name="twitter:description" content="官方github地址 博客框架: hexo    博客主题: next        MarkDown 工具: Typora hexo 不能直接显示流程图, 平时是没多大关系, 但总会有要用到的时候">
@@ -419,10 +419,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># mermaid chart</span><br><span class="line">mermaid: ## mermaid url https://github.com/knsv/mermaid</span><br><span class="line">  enable: true  # default true</span><br><span class="line">  version: &quot;7.1.2&quot; # default v7.1.2</span><br><span class="line">  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</span><br><span class="line">    #startOnload: true  // default true</span><br></pre></td></tr></table></figure>
 <p>我是 next 主题就只讲 next 主题的下一个设置方法, 其他主题请参考 <a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams" target="_blank" rel="noopener">官方github</a></p>
 <ol start="4">
-<li>打开 <figure class="highlight plain"><figcaption><span>添加以下代码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>打开 ~\themes\next\layout_partials\footer.swig 添加以下代码</li>
 </ol>
-
-<p><code>`</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.mermaid.enable %&#125;</span><br><span class="line">  &lt;script src=&apos;https://unpkg.com/mermaid@&#123;&#123; theme.mermaid.version &#125;&#125;/dist/mermaid.min.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    if (window.mermaid) &#123;</span><br><span class="line">      mermaid.initialize(&#123;&#123; JSON.stringify(theme.mermaid.options) &#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>最后重启一下, 就可以看到啦</p>
 <p>详细效果请见:</p>
 <p><a href="https://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/">微信小程序登录流程控制</a></p>
