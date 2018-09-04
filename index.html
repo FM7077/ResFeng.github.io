@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/05/how-to-show-flowchart-in-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一颗牛肉丸的回忆">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/03/tips_for_wechat_small_app/" itemprop="url">微信小程序的那些坑</a></h1>
+                <a class="post-title-link" href="/2018/09/05/how-to-show-flowchart-in-hexo/" itemprop="url">如何让 hexo 显示 Typora 的流程图</a></h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,181 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T18:00:00+08:00">
-                2018-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T00:36:22+08:00">
+                2018-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随记/" itemprop="url" rel="index">
+                    <span itemprop="name">随记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/05/how-to-show-flowchart-in-hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/05/how-to-show-flowchart-in-hexo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams" target="_blank" rel="noopener">官方github地址</a></p>
+<p>博客框架: hexo    博客主题: next        MarkDown 工具: Typora</p>
+<p>hexo 不能直接显示流程图, 平时是没多大关系, 但总会有要用到的时候</p>
+</blockquote>
+<ol>
+<li>首先安装 <a href="https://yarnpkg.com/zh-Hans/docs/install#windows-stable" target="_blank" rel="noopener">yarn</a> ( 如果你在安装前就打开了 powershell, 那么得重新打开 powershell 才能用 yarn )</li>
+<li>在博客文件夹里安装:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-filter-mermaid-diagrams</span><br></pre></td></tr></table></figure>
+<p><strong>注意: 这里是博客文件夹, 即~\source_posts 而不是 hexo 根目录</strong></p>
+<ol start="3">
+<li>站点配置文件: <figure class="highlight plain"><figcaption><span>后添加以下代码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="mermaid-chart"><a href="#mermaid-chart" class="headerlink" title="mermaid chart"></a>mermaid chart</h1><p>mermaid: ## mermaid url <a href="https://github.com/knsv/mermaid" target="_blank" rel="noopener">https://github.com/knsv/mermaid</a><br>  enable: true  # default true<br>  version: “7.1.2” # default v7.1.2<br>  options:  # find more api options from <a href="https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js" target="_blank" rel="noopener">https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</a></p>
+<pre><code>#startOnload: true  // default true
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">我是 next 主题就只讲 next 主题的下一个设置方法, 其他主题请参考 [官方github](https://github.com/webappdevelp/hexo-filter-mermaid-diagrams)</span><br><span class="line"></span><br><span class="line">4. 打开 ```~\themes\next\layout\_partials\footer.swig``` 添加以下代码</span><br></pre></td></tr></table></figure>
+
+<p><code>`</code></p>
+<p>最后重启一下, 就可以看到啦</p>
+<p>详细效果请见:</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/GNY.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/login-control-in-wechat-small-app/" itemprop="url">微信小程序登录流程控制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T23:36:48+08:00">
+                2018-09-04
               </time>
             
 
@@ -369,9 +542,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/tips_for_wechat_small_app/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/04/login-control-in-wechat-small-app/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/tips_for_wechat_small_app/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/04/login-control-in-wechat-small-app/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,12 +574,11 @@
       
         
           <blockquote>
-<p>一些关于做微信小程序时遇到的问题及一些小技巧</p>
-<p>顺便再次吐槽一下, 官方文档写得太烂了</p>
+<p>控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/tips_for_wechat_small_app/#more" rel="contents">
+            <a class="btn" href="/2018/09/04/login-control-in-wechat-small-app/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -457,7 +629,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/something-about-unionId/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/04/multiModel-in-one-controller/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一颗牛肉丸的回忆">
@@ -476,7 +648,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/03/something-about-unionId/" itemprop="url">关于 openId 和 unionId 的那些事</a></h1>
+                <a class="post-title-link" href="/2018/09/04/multiModel-in-one-controller/" itemprop="url">在 controller 中使用多个模型</a></h1>
         
 
         <div class="post-meta">
@@ -488,8 +660,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T08:44:49+08:00">
-                2018-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T21:34:25+08:00">
+                2018-09-04
               </time>
             
 
@@ -511,8 +683,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信/" itemprop="url" rel="index">
-                    <span itemprop="name">微信</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -529,9 +701,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/something-about-unionId/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/04/multiModel-in-one-controller/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/something-about-unionId/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/04/multiModel-in-one-controller/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -561,12 +733,11 @@
       
         
           <blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/unionID.html" target="_blank" rel="noopener">官方文档</a></p>
-<p>开发小程序, openId 和 unionId 几乎是没法绕过去的, 但官方文档又讲得不是那么详细,还是自己总结一下以备自己哪天忘了</p>
+<p>今天被这个 bug 坑了一个小时~ 只能怪自己太菜</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/something-about-unionId/#more" rel="contents">
+            <a class="btn" href="/2018/09/04/multiModel-in-one-controller/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -777,7 +948,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/04/multiModel-in-one-controller/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一颗牛肉丸的回忆">
@@ -796,7 +967,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/04/multiModel-in-one-controller/" itemprop="url">在 controller 中使用多个模型</a></h1>
+                <a class="post-title-link" href="/2018/09/03/tips_for_wechat_small_app/" itemprop="url">微信小程序的那些坑</a></h1>
         
 
         <div class="post-meta">
@@ -808,8 +979,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T21:34:25+08:00">
-                2018-09-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T18:00:00+08:00">
+                2018-09-03
               </time>
             
 
@@ -831,8 +1002,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/微信/" itemprop="url" rel="index">
+                    <span itemprop="name">微信</span>
                   </a>
                 </span>
 
@@ -849,9 +1020,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/04/multiModel-in-one-controller/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/03/tips_for_wechat_small_app/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/04/multiModel-in-one-controller/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/03/tips_for_wechat_small_app/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -881,11 +1052,173 @@
       
         
           <blockquote>
-<p>今天被这个 bug 坑了一个小时~ 只能怪自己太菜</p>
+<p>一些关于做微信小程序时遇到的问题及一些小技巧</p>
+<p>顺便再次吐槽一下, 官方文档写得太烂了</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/multiModel-in-one-controller/#more" rel="contents">
+            <a class="btn" href="/2018/09/03/tips_for_wechat_small_app/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/GNY.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/markdown/" itemprop="url">MarkDown 简介 [转]</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:09:26+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随记/" itemprop="url" rel="index">
+                    <span itemprop="name">随记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/03/markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/03/markdown/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这是一篇用来练手的备忘笔记</p>
+<p><a href="http://note.youdao.com/iyoudao/?p=2411" target="_blank" rel="noopener">有道云笔记MarkDown指南</a> (本文大部分内容来自该指南)</p>
+<p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">流程图部分的原文</a></p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/03/markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1098,7 +1431,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/markdown/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/something-about-unionId/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一颗牛肉丸的回忆">
@@ -1117,7 +1450,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/03/markdown/" itemprop="url">MarkDown 简介 [转]</a></h1>
+                <a class="post-title-link" href="/2018/09/03/something-about-unionId/" itemprop="url">关于 openId 和 unionId 的那些事</a></h1>
         
 
         <div class="post-meta">
@@ -1129,7 +1462,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:09:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T08:44:49+08:00">
                 2018-09-03
               </time>
             
@@ -1152,8 +1485,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
+                  <a href="/categories/微信/" itemprop="url" rel="index">
+                    <span itemprop="name">微信</span>
                   </a>
                 </span>
 
@@ -1170,9 +1503,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/03/markdown/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/03/something-about-unionId/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/markdown/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/03/something-about-unionId/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1202,13 +1535,12 @@
       
         
           <blockquote>
-<p>这是一篇用来练手的备忘笔记</p>
-<p><a href="http://note.youdao.com/iyoudao/?p=2411" target="_blank" rel="noopener">有道云笔记MarkDown指南</a> (本文大部分内容来自该指南)</p>
-<p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">流程图部分的原文</a></p>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/unionID.html" target="_blank" rel="noopener">官方文档</a></p>
+<p>开发小程序, openId 和 unionId 几乎是没法绕过去的, 但官方文档又讲得不是那么详细,还是自己总结一下以备自己哪天忘了</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/markdown/#more" rel="contents">
+            <a class="btn" href="/2018/09/03/something-about-unionId/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1456,7 +1788,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1478,7 +1810,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1573,6 +1905,14 @@
 
 
 
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
 
         
 
