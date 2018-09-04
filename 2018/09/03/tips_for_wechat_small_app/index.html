@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="微信小程序,web服务器,java," />
+  <meta name="keywords" content="java,微信小程序,web服务器," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
-<meta name="keywords" content="微信小程序,web服务器,java">
+<meta name="keywords" content="java,微信小程序,web服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序的那些坑">
 <meta property="og:url" content="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/index.html">
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T08:18:07.576Z">
+<meta property="og:updated_time" content="2018-09-04T10:44:24.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序的那些坑">
 <meta name="twitter:description" content="一些关于做微信小程序时遇到的问题及一些小技巧 顺便再次吐槽一下, 官方文档写得太烂了">
@@ -445,9 +445,15 @@
 <p>emmmmm, 傻逼了, 其实只要把<em>其余代码</em>放在 if 里就可以了</p>
 <p>然后这个时候你会发现 else 中的跳转并不起作用</p>
 <p>然后我就用了 ==wx.reLaunch== 就可以跳转了, 原因暂不知. 关于 wx.reLaunch 的介绍见下面</p>
-<h1 id="你可能不知道的-wx-redirectTo-wx-reLaunch"><a href="#你可能不知道的-wx-redirectTo-wx-reLaunch" class="headerlink" title="你可能不知道的 wx.redirectTo, wx.reLaunch"></a>你可能不知道的 wx.redirectTo, wx.reLaunch</h1><p>一般用的可能 wx.navigate 比较多, 它可以跳转到5层级以内的任何页面, 跳转后也能返回上一层页面, 超过5个层级不会跳转</p>
-<p>为了解决这个问题, 找到了 wx.redirectTo, 它可以跳转到任何层级的页面, 但跳转过去后无法返回到上一层页面. 对于不想再返回的页面, 导向的时候就可以用 wx.redirectTo</p>
+<h1 id="你可能不知道的多种跳转方法"><a href="#你可能不知道的多种跳转方法" class="headerlink" title="你可能不知道的多种跳转方法"></a>你可能不知道的多种跳转方法</h1><blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxnavigatetoobject" target="_blank" rel="noopener">官方文档</a></p>
+<p>wx.navigateTo, wx.redirectTo, wx.reLaunch</p>
+</blockquote>
+<p>一般用的可能 wx.navigate 比较多, 它可以跳转到5层级以内的任何页面, 这种跳转方法不会销毁其他页面, 跳转后也能返回上一层页面, 超过5个层级不会跳转.</p>
+<p>为了解决这个问题, 找到了 wx.redirectTo, 它可以跳转到任何层级的页面, 该跳转方法会销毁上一层的页面( 不是所有 ), 因此跳转过去后无法返回到上一层页面. 对于不想再返回的页面, 导向的时候就可以用 wx.redirectTo.</p>
 <p>wx.reLaunch: 清空页面栈, 导航到指定页面.</p>
+<hr>
+<p>未完待续</p>
 <h1 id="遇到-bug"><a href="#遇到-bug" class="headerlink" title="遇到 bug"></a>遇到 bug</h1><h2 id="本地测试-localhost-服务器本地ip"><a href="#本地测试-localhost-服务器本地ip" class="headerlink" title="本地测试 localhost / 服务器本地ip"></a>本地测试 localhost / 服务器本地ip</h2><p>用模拟器测试时如果请求服务器链接为 localhost 那么没什么问题, 但如果用的是服务器本地 ip 时会报503 错误, 但服务器又能收到模拟器发出的消息, 真是神奇.</p>
 <p>如果用真机测试那么当然不能写 localhost 了, 而应该写 服务器本地 ip, 这时就很正常~ 就是很神奇</p>
 
@@ -467,11 +473,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/java/" rel="tag"># java</a>
+          
             <a href="/tags/微信小程序/" rel="tag"># 微信小程序</a>
           
             <a href="/tags/web服务器/" rel="tag"># web服务器</a>
-          
-            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -587,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -678,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toast-现已更改为-showToast"><span class="nav-number">1.</span> <span class="nav-text">Toast 现已更改为 showToast</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js-中动态更改组件属性"><span class="nav-number">2.</span> <span class="nav-text">js 中动态更改组件属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听器里调用上一级变量"><span class="nav-number">3.</span> <span class="nav-text">监听器里调用上一级变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入框剔除无效字符"><span class="nav-number">4.</span> <span class="nav-text">输入框剔除无效字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击按钮后获取输入框内容"><span class="nav-number">5.</span> <span class="nav-text">点击按钮后获取输入框内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板引用"><span class="nav-number">5.1.</span> <span class="nav-text">模板引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Please-do-not-register-multiple-Pages-in-undefined-js-错误"><span class="nav-number">6.</span> <span class="nav-text">Please do not register multiple Pages in undefined.js 错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-input-的-maxlength"><span class="nav-number">6.1.</span> <span class="nav-text">关于 input 的 maxlength</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-流布局的居中要点"><span class="nav-number">6.2.</span> <span class="nav-text">flex 流布局的居中要点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST-请求相关"><span class="nav-number">7.</span> <span class="nav-text">POST 请求相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS-证书"><span class="nav-number">8.</span> <span class="nav-text">HTTPS 证书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中止代码执行"><span class="nav-number">9.</span> <span class="nav-text">中止代码执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你可能不知道的-wx-redirectTo-wx-reLaunch"><span class="nav-number">10.</span> <span class="nav-text">你可能不知道的 wx.redirectTo, wx.reLaunch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到-bug"><span class="nav-number">11.</span> <span class="nav-text">遇到 bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地测试-localhost-服务器本地ip"><span class="nav-number">11.1.</span> <span class="nav-text">本地测试 localhost / 服务器本地ip</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toast-现已更改为-showToast"><span class="nav-number">1.</span> <span class="nav-text">Toast 现已更改为 showToast</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js-中动态更改组件属性"><span class="nav-number">2.</span> <span class="nav-text">js 中动态更改组件属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听器里调用上一级变量"><span class="nav-number">3.</span> <span class="nav-text">监听器里调用上一级变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入框剔除无效字符"><span class="nav-number">4.</span> <span class="nav-text">输入框剔除无效字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击按钮后获取输入框内容"><span class="nav-number">5.</span> <span class="nav-text">点击按钮后获取输入框内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板引用"><span class="nav-number">5.1.</span> <span class="nav-text">模板引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Please-do-not-register-multiple-Pages-in-undefined-js-错误"><span class="nav-number">6.</span> <span class="nav-text">Please do not register multiple Pages in undefined.js 错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-input-的-maxlength"><span class="nav-number">6.1.</span> <span class="nav-text">关于 input 的 maxlength</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-流布局的居中要点"><span class="nav-number">6.2.</span> <span class="nav-text">flex 流布局的居中要点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POST-请求相关"><span class="nav-number">7.</span> <span class="nav-text">POST 请求相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS-证书"><span class="nav-number">8.</span> <span class="nav-text">HTTPS 证书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中止代码执行"><span class="nav-number">9.</span> <span class="nav-text">中止代码执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你可能不知道的多种跳转方法"><span class="nav-number">10.</span> <span class="nav-text">你可能不知道的多种跳转方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到-bug"><span class="nav-number">11.</span> <span class="nav-text">遇到 bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地测试-localhost-服务器本地ip"><span class="nav-number">11.1.</span> <span class="nav-text">本地测试 localhost / 服务器本地ip</span></a></li></ol></li></ol></div>
             
 
           </div>
