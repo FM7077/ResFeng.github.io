@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="流程图,微信小程序," />
+  <meta name="keywords" content="微信小程序,流程图," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的">
-<meta name="keywords" content="流程图,微信小程序">
+<meta name="keywords" content="微信小程序,流程图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序登录流程控制">
 <meta property="og:url" content="http://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/index.html">
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T16:18:22.090Z">
+<meta property="og:updated_time" content="2018-09-05T04:45:05.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序登录流程控制">
 <meta name="twitter:description" content="控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的">
@@ -381,6 +381,17 @@
 
           
           
+             <span id="/2018/09/04/login-control-in-wechat-small-app/" class="leancloud_visitors" data-flag-title="微信小程序登录流程控制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -405,12 +416,10 @@
 <p>控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的</p>
 </blockquote>
 <a id="more"></a>
-<blockquote>
 <p>小程序环境:</p>
 <p>任何用户都能注册, 但只有认定了的用户才能登录进行核心功能使用</p>
 <p>后台有关于用户的唯一 id( 非 unionId 或 openId )</p>
 <p>没有密码( 这个功能的添加和上面的需求不冲突 )</p>
-</blockquote>
 <pre class="mermaid">graph TB
 a[用户进入]-->|初次|b[登记页面]
     b-->c(等待确认页面)
@@ -421,7 +430,7 @@ a-->|二次|d{本地是否存有id}
             g-->|是|e
             g-->|是|h[存入id]
             g-->|否|i[等待确认页面]
-        f-->|否|j(登记页面)</pre>
+        f-->|否|b</pre>
 
 <p>注: 判断是否初次进入是根据用户授权情况的, 而不是用户是否第一次打开小程序</p>
 
@@ -441,9 +450,9 @@ a-->|二次|d{本地是否存有id}
       
         <div class="post-tags">
           
-            <a href="/tags/流程图/" rel="tag"># 流程图</a>
-          
             <a href="/tags/微信小程序/" rel="tag"># 微信小程序</a>
+          
+            <a href="/tags/流程图/" rel="tag"># 流程图</a>
           
         </div>
       
@@ -550,7 +559,7 @@ a-->|二次|d{本地是否存有id}
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -561,7 +570,7 @@ a-->|二次|d{本地是否存有id}
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -572,7 +581,7 @@ a-->|二次|d{本地是否存有id}
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1175,6 +1184,113 @@ a-->|二次|d{本地是否存有id}
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("XKLRxcn77tkAjqJtG94DDb8o-gzGzoHsz", "eYMsG07AeFEXzoDHAhiGi2nh");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
