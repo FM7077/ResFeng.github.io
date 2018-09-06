@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T04:45:05.285Z">
+<meta property="og:updated_time" content="2018-09-05T12:55:46.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序登录流程控制">
 <meta name="twitter:description" content="控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的">
@@ -342,7 +342,7 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-05T12:45:05+08:00" content="2018-09-05">
+            <time itemprop="dateUpdated" datetime="2018-09-05T20:55:46+08:00" content="2018-09-05">
               2018-09-05
             </time>
           </span>
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  213
+                  207
                 </span>
               
 
@@ -432,10 +432,15 @@
 <p>控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的</p>
 </blockquote>
 <a id="more"></a>
-<p>小程序环境:</p>
-<p>任何用户都能注册, 但只有认定了的用户才能登录进行核心功能使用</p>
-<p>后台有关于用户的唯一 id( 非 unionId 或 openId )</p>
-<p>没有密码( 这个功能的添加和上面的需求不冲突 )</p>
+<p>需求及背景:</p>
+<ol>
+<li><p>任何用户都能注册, 但只有认定了的用户才能登录进行核心功能使用</p>
+</li>
+<li><p>后台有关于用户的唯一 id( 非 unionId 或 openId )</p>
+</li>
+<li><p>没有密码( 这个功能的添加和上面的需求不冲突 )</p>
+</li>
+</ol>
 <pre class="mermaid">graph TB
 a[用户进入]-->|初次|b[登记页面]
     b-->c(等待确认页面)
@@ -445,7 +450,7 @@ a-->|二次|d{本地是否存有id}
         f-->|是|g{是否已确认}
             g-->|是|e
             g-->|是|h[存入id]
-            g-->|否|i[等待确认页面]
+            g-->|否|c
         f-->|否|b</pre>
 
 <p>注: 判断是否初次进入是根据用户授权情况的, 而不是用户是否第一次打开小程序</p>
@@ -593,7 +598,7 @@ a-->|二次|d{本地是否存有id}
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -615,7 +620,7 @@ a-->|二次|d{本地是否存有id}
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -703,7 +708,7 @@ a-->|二次|d{本地是否存有id}
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.3k</span>
+    <span title="Site words total count">8.1k</span>
   
   
   <span>
