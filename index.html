@@ -297,6 +297,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/09/wx-for-listener/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/GNY.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一颗牛肉丸的回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/09/wx-for-listener/" itemprop="url">微信小程序列表的事件绑定-进阶</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-09T19:21:27+08:00">
+                2018-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+          
+          <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+            <time itemprop="dateUpdated" datetime="2018-09-09T20:41:53+08:00" content="2018-09-09">
+              2018-09-09
+            </time>
+          </span>
+        
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/微信/" itemprop="url" rel="index">
+                    <span itemprop="name">微信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/09/wx-for-listener/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/09/wx-for-listener/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  436
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>需求: 小程序列表中有一按钮, 按下后对列表中某项值进行改变</p>
+<p>即, 按下按钮后要获取按钮所在行的索引值( 所在行行数 ), 通过该值获取同行别的元素的参数</p>
+</blockquote>
+<h1 id="具体需求分析"><a href="#具体需求分析" class="headerlink" title="具体需求分析"></a>具体需求分析</h1><p><img src="/2018/09/09/wx-for-listener/wx-for-listener.assets/1536495363567.png" alt="1536495363567"></p>
+<center><font color="#999999">我的小程序截图</font></center>
+
+<p>当按下 + 或 - 对应行的数量加或减1, 所以需要统一的 ‘id’ 来标识每一行.</p>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p>在官网上查到, 可以用 wx:for-index=”index”, 同时用一个参数 id=”“ 来传这个参数 来为列表绑定下标. 见以下代码第一行. 再给这个列表绑定一个事件 tap_main. 每当触碰到列表, 返回的数据都会带 id, 这就是我想要的 “行数”.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;arrayGood&#125;&#125;"</span> <span class="attr">wx:for-index</span>=<span class="string">"index"</span> <span class="attr">id</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"main_lists_item"</span> <span class="attr">wx:key</span>=<span class="string">"good_name"</span> <span class="attr">bindtap</span>=<span class="string">"tap_main"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">data-name</span>=<span class="string">"&#123;&#123;item.good_name&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"main_lists_name"</span>&gt;</span>&#123;&#123;item.good_name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">data-name</span>=<span class="string">"&#123;&#123;item.unit&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"main_lists_unit"</span>&gt;</span>&#123;&#123;item.unit&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"main_lists_num"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-name</span>=<span class="string">"&#123;&#123;item.num&#125;&#125;"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"item_num"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">value</span>=<span class="string">"&#123;&#123;item.num&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"/src/img/add.png"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">style</span>=<span class="string">"width: 40rpx; height: 40rpx"</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">bindtap</span>=<span class="string">"tap_add"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"item_as"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"/src/img/sub.png"</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">style</span>=<span class="string">"width: 40rpx; height: 40rpx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">bindtap</span>=<span class="string">"tap_sub"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"item_as"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组结构</span></span><br><span class="line">arrayGood: [&#123;</span><br><span class="line">  good_name: <span class="string">'good1'</span>,</span><br><span class="line">  unit: <span class="string">'克'</span>,</span><br><span class="line">  num: <span class="number">0</span>,</span><br><span class="line">  index: <span class="number">1</span>,</span><br><span class="line">&#125;,&#123;</span><br><span class="line">  good_name: <span class="string">'good2'</span>,</span><br><span class="line">  unit: <span class="string">'米'</span>,</span><br><span class="line">  num: <span class="number">1</span>,</span><br><span class="line">  index: <span class="number">2</span>,</span><br><span class="line">&#125;,&#123;</span><br><span class="line">  good_name: <span class="string">'good3'</span>,</span><br><span class="line">  unit: <span class="string">'千克'</span>,</span><br><span class="line">  num: <span class="number">0.01</span>,</span><br><span class="line">  index: <span class="number">3</span>,</span><br><span class="line">&#125;],</span><br><span class="line"></span><br><span class="line"><span class="comment">//监听函数</span></span><br><span class="line">tap_main: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<center><font color="#999999">wxml, js 代码</font></center>
+
+<p><img src="/2018/09/09/wx-for-listener/wx-for-listener.assets/1536496168283.png" alt="1536496168283"></p>
+<center><font color="#999999">点击事件获取到的数据</font></center>
+
+<p>可见获取到的 id 在 res.currentTarget.dataset.id 中.</p>
+<p>通过这个 id 就可以来操作数组中对应位置的值了.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/07/garbled-chinese-in-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -528,8 +725,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-08T11:50:17+08:00" content="2018-09-08">
-              2018-09-08
+            <time itemprop="dateUpdated" datetime="2018-09-09T20:17:58+08:00" content="2018-09-09">
+              2018-09-09
             </time>
           </span>
         
@@ -1968,194 +2165,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/03/markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/GNY.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/markdown/" itemprop="url">MarkDown 简介 [转]</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:09:26+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-          
-          <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-04T00:25:21+08:00" content="2018-09-04">
-              2018-09-04
-            </time>
-          </span>
-        
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/03/markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/03/markdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  993
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这是一篇用来练手的备忘笔记</p>
-<p><a href="http://note.youdao.com/iyoudao/?p=2411" target="_blank" rel="noopener">有道云笔记MarkDown指南</a> (本文大部分内容来自该指南)</p>
-<p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">流程图部分的原文</a></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/03/markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2210,7 +2219,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2232,7 +2241,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2320,7 +2329,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.1k</span>
+    <span title="Site words total count">9.5k</span>
   
   
   <span>
