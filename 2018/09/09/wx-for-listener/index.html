@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="需求: 小程序列表中有一按钮, 按下后对列表中某项值进行改变 即, 按下按钮后要获取按钮所在行的索引值( 所在行行数 ), 通过该值获取同行别的元素的参数  具体需求分析 我的小程序截图  当按下 + 或 - 对应行的数量加或减1, 所以需要统一的 ‘id’ 来标识每一行. 具体实现在官网上查到, 可以用 wx:for-index=”index”, 同时用一个参数 id=”“ 来传这个参数 来为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/wx-for-listener.assets/1536495363567.png">
-<meta property="og:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/wx-for-listener.assets/1536496168283.png">
-<meta property="og:updated_time" content="2018-09-09T12:41:53.193Z">
+<meta property="og:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/1536495363567.png">
+<meta property="og:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/1536496168283.png">
+<meta property="og:updated_time" content="2018-09-09T13:51:36.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序列表的事件绑定-进阶">
 <meta name="twitter:description" content="需求: 小程序列表中有一按钮, 按下后对列表中某项值进行改变 即, 按下按钮后要获取按钮所在行的索引值( 所在行行数 ), 通过该值获取同行别的元素的参数  具体需求分析 我的小程序截图  当按下 + 或 - 对应行的数量加或减1, 所以需要统一的 ‘id’ 来标识每一行. 具体实现在官网上查到, 可以用 wx:for-index=”index”, 同时用一个参数 id=”“ 来传这个参数 来为">
-<meta name="twitter:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/wx-for-listener.assets/1536495363567.png">
+<meta name="twitter:image" content="http://blog.fm7077.ml/2018/09/09/wx-for-listener/1536495363567.png">
 
 
 
@@ -345,7 +345,7 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-09T20:41:53+08:00" content="2018-09-09">
+            <time itemprop="dateUpdated" datetime="2018-09-09T21:51:36+08:00" content="2018-09-09">
               2018-09-09
             </time>
           </span>
@@ -435,7 +435,7 @@
 <p>需求: 小程序列表中有一按钮, 按下后对列表中某项值进行改变</p>
 <p>即, 按下按钮后要获取按钮所在行的索引值( 所在行行数 ), 通过该值获取同行别的元素的参数</p>
 </blockquote>
-<h1 id="具体需求分析"><a href="#具体需求分析" class="headerlink" title="具体需求分析"></a>具体需求分析</h1><p><img src="/2018/09/09/wx-for-listener/wx-for-listener.assets/1536495363567.png" alt="1536495363567"></p>
+<h1 id="具体需求分析"><a href="#具体需求分析" class="headerlink" title="具体需求分析"></a>具体需求分析</h1><p><img src="/2018/09/09/wx-for-listener/1536495363567.png" alt="1536495363567"></p>
 <center><font color="#999999">我的小程序截图</font></center>
 
 <p>当按下 + 或 - 对应行的数量加或减1, 所以需要统一的 ‘id’ 来标识每一行.</p>
@@ -444,7 +444,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组结构</span></span><br><span class="line">arrayGood: [&#123;</span><br><span class="line">  good_name: <span class="string">'good1'</span>,</span><br><span class="line">  unit: <span class="string">'克'</span>,</span><br><span class="line">  num: <span class="number">0</span>,</span><br><span class="line">  index: <span class="number">1</span>,</span><br><span class="line">&#125;,&#123;</span><br><span class="line">  good_name: <span class="string">'good2'</span>,</span><br><span class="line">  unit: <span class="string">'米'</span>,</span><br><span class="line">  num: <span class="number">1</span>,</span><br><span class="line">  index: <span class="number">2</span>,</span><br><span class="line">&#125;,&#123;</span><br><span class="line">  good_name: <span class="string">'good3'</span>,</span><br><span class="line">  unit: <span class="string">'千克'</span>,</span><br><span class="line">  num: <span class="number">0.01</span>,</span><br><span class="line">  index: <span class="number">3</span>,</span><br><span class="line">&#125;],</span><br><span class="line"></span><br><span class="line"><span class="comment">//监听函数</span></span><br><span class="line">tap_main: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <center><font color="#999999">wxml, js 代码</font></center>
 
-<p><img src="/2018/09/09/wx-for-listener/wx-for-listener.assets/1536496168283.png" alt="1536496168283"></p>
+<p><img src="/2018/09/09/wx-for-listener/1536496168283.png" alt="1536496168283"></p>
 <center><font color="#999999">点击事件获取到的数据</font></center>
 
 <p>可见获取到的 id 在 res.currentTarget.dataset.id 中.</p>
