@@ -83,11 +83,11 @@
 <meta name="keywords" content="mindmap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="师傅单据RM">
-<meta property="og:url" content="http://blog.fm7077.ml/2018/09/28/master-order-RM/index.html">
+<meta property="og:url" content="http://blog.fm7077.ml/2018/09/28/master-order-rm/index.html">
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="关于这个程序的一些脑洞">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T08:11:11.916Z">
+<meta property="og:updated_time" content="2018-09-28T09:39:01.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="师傅单据RM">
 <meta name="twitter:description" content="关于这个程序的一些脑洞">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.fm7077.ml/2018/09/28/master-order-RM/"/>
+  <link rel="canonical" href="http://blog.fm7077.ml/2018/09/28/master-order-rm/"/>
 
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/28/master-order-RM/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2018/09/28/master-order-rm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="一颗牛肉丸的回忆">
@@ -342,7 +342,7 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-28T16:11:11+08:00" content="2018-09-28">
+            <time itemprop="dateUpdated" datetime="2018-09-28T17:39:01+08:00" content="2018-09-28">
               2018-09-28
             </time>
           </span>
@@ -379,9 +379,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/28/master-order-RM/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/28/master-order-rm/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/28/master-order-RM/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/28/master-order-rm/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  202
+                  759
                 </span>
               
 
@@ -435,32 +435,364 @@
 <h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><ol>
 <li>BS架构</li>
 <li>Idea</li>
-<li>MySQL 或 SQLServer ( 主要看方不方便数据迁移 )</li>
+<li>MySQL</li>
 <li>脚架 <a href="https://gitee.com/zhocuhenglin/dp-pro" target="_blank" rel="noopener">dp-pro</a></li>
 </ol>
 <h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ol>
-<li><p>已有师傅单据程序所有功能</p>
-</li>
-<li><p>货物分类管理</p>
-</li>
-<li><p>师傅小程序下单功能</p>
-<ol>
+<li>已有师傅单据程序所有功能</li>
+<li>货物分类管理</li>
+<li>师傅小程序下单功能<ol>
 <li>登录功能 <a href="https://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/">微信小程序登录流程控制</a></li>
 <li>检索货物, 提交购物单功能</li>
 <li>在本程序接收校验购物单, 并转换为实际单据</li>
 </ol>
 </li>
-<li><p>单据推送( 用以校对出货 ), 同样是通过小程序实现</p>
-<ol>
-<li>与师傅小程序下单类似的但又有简化的登录功能</li>
-<li>单据推送, 货物校对勾选功能</li>
+<li>单据推送( 用以校对出货 ), 同样是通过小程序实现<ol>
+<li>与师傅小程序下单类似而精简的登录功能</li>
+<li>只需实现简单推送, 用以实现校对出货即可</li>
 </ol>
-<p>此功能不需要太复杂, 提供一个数字化校对功能就行</p>
 </li>
-<li><p>日结, 月结功能</p>
-</li>
+<li>日结, 月结功能</li>
+<li>程序内实现分页查询</li>
+<li>自动提醒上一次购买的价格</li>
+<li>根据实际情况看是否要实现单位转换</li>
 </ol>
-<h1 id="库结构设计"><a href="#库结构设计" class="headerlink" title="库结构设计"></a>库结构设计</h1><h2 id="货物表"><a href="#货物表" class="headerlink" title="货物表"></a>货物表</h2><p><code>`</code></p>
+<h1 id="库结构设计"><a href="#库结构设计" class="headerlink" title="库结构设计"></a>库结构设计</h1><h2 id="1-货物库"><a href="#1-货物库" class="headerlink" title="1. 货物库"></a>1. 货物库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>good_id</td>
+<td>varchar(7)</td>
+<td>pk</td>
+<td>g+6位序列号, 由程序实现自增</td>
+</tr>
+<tr>
+<td>good_name</td>
+<td>varchar(60)</td>
+<td>not null</td>
+<td>到目前为止 60 位是够用的, 但…</td>
+</tr>
+<tr>
+<td>good_unit</td>
+<td>varchar(6)</td>
+<td>not null</td>
+<td>单位</td>
+</tr>
+<tr>
+<td>type_id</td>
+<td>varchar(5)</td>
+<td>not null</td>
+<td>所属类型 id</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>varchar(5)</td>
+<td>not null</td>
+<td>所属品牌 id</td>
+</tr>
+<tr>
+<td>factory_price</td>
+<td>float</td>
+<td>默认 0</td>
+<td>厂价</td>
+</tr>
+<tr>
+<td>purchase_price</td>
+<td>float</td>
+<td>默认 0</td>
+<td>进货价</td>
+</tr>
+<tr>
+<td>wholesale_price</td>
+<td>float</td>
+<td>默认 0</td>
+<td>批发价</td>
+</tr>
+<tr>
+<td>retail_price</td>
+<td>float</td>
+<td>默认 0</td>
+<td>零售价</td>
+</tr>
+<tr>
+<td>stock</td>
+<td>float</td>
+<td>默认 0</td>
+<td>库存</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-类型库"><a href="#2-类型库" class="headerlink" title="2. 类型库"></a>2. 类型库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type_id</td>
+<td>varchar(5)</td>
+<td>主键</td>
+<td>t+4位序列号</td>
+</tr>
+<tr>
+<td>type_name</td>
+<td>varchar(10)</td>
+<td></td>
+<td>类名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-品牌库"><a href="#3-品牌库" class="headerlink" title="3. 品牌库"></a>3. 品牌库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand_id</td>
+<td>varchar(5)</td>
+<td>主键</td>
+<td>b+4位序列号</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>varchar(20)</td>
+<td></td>
+<td>品牌名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-订单库"><a href="#4-订单库" class="headerlink" title="4. 订单库"></a>4. 订单库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bill_id</td>
+<td>varchar(13)</td>
+<td>pk</td>
+<td>门店代号(目前初始为a) + 6位年月日 + 6位序列号</td>
+</tr>
+<tr>
+<td>gmr_create</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>创建时间 年-月-日</td>
+</tr>
+<tr>
+<td>gmr_modified</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>修改时间 年-月-日, 默认与创建时间同日</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>顾客id 若是已存于顾客库的直接引用顾客库的 id, 若是零售单则自建一个序列号: tc + 8位序列号(该序列号根据 开头为 tc 的数量实现自增)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-订单详细库"><a href="#5-订单详细库" class="headerlink" title="5. 订单详细库"></a>5. 订单详细库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detail_id</td>
+<td>varchar(15)</td>
+<td>pk</td>
+<td>所属订单 id + 3位序列号</td>
+</tr>
+<tr>
+<td>bill_id</td>
+<td>varchar(13)</td>
+<td>not null</td>
+<td>所属订单 id</td>
+</tr>
+<tr>
+<td>good_id</td>
+<td>varchar(7)</td>
+<td>not null</td>
+<td>货物 id</td>
+</tr>
+<tr>
+<td>good_name</td>
+<td>varchar(60)</td>
+<td>not null</td>
+<td>货物名称</td>
+</tr>
+<tr>
+<td>good_unit</td>
+<td>varchar(6)</td>
+<td>not null</td>
+<td>单位</td>
+</tr>
+<tr>
+<td>factory_price</td>
+<td>float</td>
+<td>not null</td>
+<td>厂价</td>
+</tr>
+<tr>
+<td>purchase_price</td>
+<td>float</td>
+<td>not null</td>
+<td>进货价</td>
+</tr>
+<tr>
+<td>wholesale_price</td>
+<td>float</td>
+<td>not null</td>
+<td>批发价</td>
+</tr>
+<tr>
+<td>retail_price</td>
+<td>float</td>
+<td>not null</td>
+<td>零售价</td>
+</tr>
+<tr>
+<td>num</td>
+<td>float</td>
+<td>not null</td>
+<td>数量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-顾客库"><a href="#6-顾客库" class="headerlink" title="6. 顾客库"></a>6. 顾客库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customer_id</td>
+<td>varchar(10)</td>
+<td>pk</td>
+<td>ct + 8位序列号</td>
+</tr>
+<tr>
+<td>customer_name</td>
+<td>varchar(20)</td>
+<td>not null</td>
+<td>顾客名称</td>
+</tr>
+<tr>
+<td>customer_phone</td>
+<td>varchar(11)</td>
+<td></td>
+<td>顾客手机号( 可为空 )</td>
+</tr>
+<tr>
+<td>union_id</td>
+<td>varchar(28)</td>
+<td></td>
+<td>通过微信注册的用户的 union id</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-工地库"><a href="#7-工地库" class="headerlink" title="7. 工地库"></a>7. 工地库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>place_id</td>
+<td>varchar(5)</td>
+<td>pk</td>
+<td>cp + 3位序列号</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>所属顾客 id</td>
+</tr>
+<tr>
+<td>place_name</td>
+<td>varchar(20)</td>
+<td>not null</td>
+<td>工地名称</td>
+</tr>
+<tr>
+<td>place_address</td>
+<td>varchar(100)</td>
+<td></td>
+<td>工地地址</td>
+</tr>
+<tr>
+<td>place_status</td>
+<td>int</td>
+<td>默认 0</td>
+<td>0: 未完工, 1: 已完工</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-临时顾客库"><a href="#8-临时顾客库" class="headerlink" title="8. 临时顾客库"></a>8. 临时顾客库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>union_id</td>
+<td>varchar(28)</td>
+<td>pk</td>
+<td>微信的 union id</td>
+</tr>
+<tr>
+<td>customer_name</td>
+<td>varchar(20)</td>
+<td>not null</td>
+<td>顾客名称</td>
+</tr>
+<tr>
+<td>customer_phone</td>
+<td>varchar(11)</td>
+<td></td>
+<td>顾客手机号( 可为空 )</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -481,7 +813,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.fm7077.ml/2018/09/28/master-order-RM/" title="师傅单据RM">https://blog.fm7077.ml/2018/09/28/master-order-RM/</a>
+    <a href="https://blog.fm7077.ml/2018/09/28/master-order-rm/" title="师傅单据RM">https://blog.fm7077.ml/2018/09/28/master-order-rm/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -518,10 +850,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/master-order-mindmap/" rel="prev" title="师傅单据RM">
-                师傅单据RM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +940,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -703,7 +1031,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">1.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库结构设计"><span class="nav-number">3.</span> <span class="nav-text">库结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#货物表"><span class="nav-number">3.1.</span> <span class="nav-text">货物表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">1.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库结构设计"><span class="nav-number">3.</span> <span class="nav-text">库结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-货物库"><span class="nav-number">3.1.</span> <span class="nav-text">1. 货物库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-类型库"><span class="nav-number">3.2.</span> <span class="nav-text">2. 类型库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-品牌库"><span class="nav-number">3.3.</span> <span class="nav-text">3. 品牌库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-订单库"><span class="nav-number">3.4.</span> <span class="nav-text">4. 订单库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-订单详细库"><span class="nav-number">3.5.</span> <span class="nav-text">5. 订单详细库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-顾客库"><span class="nav-number">3.6.</span> <span class="nav-text">6. 顾客库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-工地库"><span class="nav-number">3.7.</span> <span class="nav-text">7. 工地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-临时顾客库"><span class="nav-number">3.8.</span> <span class="nav-text">8. 临时顾客库</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -738,7 +1066,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.3k</span>
+    <span title="Site words total count">11.1k</span>
   
   
   <span>
@@ -904,8 +1232,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://blog.fm7077.ml/2018/09/28/master-order-RM/';
-          this.page.identifier = '2018/09/28/master-order-RM/';
+          this.page.url = 'http://blog.fm7077.ml/2018/09/28/master-order-rm/';
+          this.page.identifier = '2018/09/28/master-order-rm/';
           this.page.title = '师傅单据RM';
         };
         var d = document, s = d.createElement('script');
