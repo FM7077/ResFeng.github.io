@@ -82,14 +82,14 @@
 <meta name="description" content="select2 github 仓库 小林工程师 dp-pro gitee 仓库 本文所使用的 select2 由小林工程师二次封装过. 文中将对 select2 的级联选择做一些说明">
 <meta name="keywords" content="-js -select2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 select2 (不要看, 这是一篇废文)">
+<meta property="og:title" content="关于 dp-pro 中 select2 的 bug">
 <meta property="og:url" content="http://blog.fm7077.ml/2019/04/12/select2/index.html">
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="select2 github 仓库 小林工程师 dp-pro gitee 仓库 本文所使用的 select2 由小林工程师二次封装过. 文中将对 select2 的级联选择做一些说明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T07:32:20.999Z">
+<meta property="og:updated_time" content="2019-04-12T08:08:21.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 select2 (不要看, 这是一篇废文)">
+<meta name="twitter:title" content="关于 dp-pro 中 select2 的 bug">
 <meta name="twitter:description" content="select2 github 仓库 小林工程师 dp-pro gitee 仓库 本文所使用的 select2 由小林工程师二次封装过. 文中将对 select2 的级联选择做一些说明">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>关于 select2 (不要看, 这是一篇废文) | 一颗牛肉丸的回忆</title>
+  <title>关于 dp-pro 中 select2 的 bug | 一颗牛肉丸的回忆</title>
   
 
 
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于 select2 (不要看, 这是一篇废文)</h1>
+          <h1 class="post-title" itemprop="name headline">关于 dp-pro 中 select2 的 bug</h1>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2019-04-12T15:32:20+08:00" content="2019-04-12">
+            <time itemprop="dateUpdated" datetime="2019-04-12T16:08:21+08:00" content="2019-04-12">
               2019-04-12
             </time>
           </span>
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  439
+                  468
                 </span>
               
 
@@ -439,8 +439,8 @@
 <p>dp-pro 中的 select2 有级联选择的 demo 但有一个问题就是:</p>
 <p>设有 A-B-C 三个级联选项, 选中 A 后, B 填充对应的内容 B1, 这时再选中 A 中某项, B 中就会新增内容 B2, 而 B1 还存在着, 没被删去.</p>
 <h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>首先, 在 change 事件中加入: $(‘.city’).empty();</p>
-<p>从上面的 js 代码中可以看出 change 事件中传入的 data 即为 value. 通过判断 value 是否为空, 决定是否重构下级 select2.</p>
-<h2 id="新-bug"><a href="#新-bug" class="headerlink" title="新 bug"></a>新 bug</h2><p>emmmm, 刚发现每次点击 A 都会比上一次多一次请求, 这是什么神仙bug, 我还是用原生的 select2 好了</p>
+<h2 id="一次点击多次请求"><a href="#一次点击多次请求" class="headerlink" title="一次点击多次请求"></a>一次点击多次请求</h2><p>每点击一次 A 后再点击 B 都会产生比上次多一次的请求, 这是因为每次点击 A 都会让 B 绑定一个新事件, 这就导致了多一次点击就多一次请求, 并且会积累下去. 这样是很不合理的, 所以应该在为 B 注册新事件时把之前的事件注销掉.</p>
+<p>$(‘.city’).off(‘change’)</p>
 
       
     </div>
@@ -461,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.fm7077.ml/2019/04/12/select2/" title="关于 select2 (不要看, 这是一篇废文)">https://blog.fm7077.ml/2019/04/12/select2/</a>
+    <a href="https://blog.fm7077.ml/2019/04/12/select2/" title="关于 dp-pro 中 select2 的 bug">https://blog.fm7077.ml/2019/04/12/select2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -679,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dp-pro-的-select2-的bug"><span class="nav-number">1.</span> <span class="nav-text">dp-pro 的 select2 的bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dp-pro-中的源码"><span class="nav-number">1.1.</span> <span class="nav-text">dp-pro 中的源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决过程"><span class="nav-number">1.2.</span> <span class="nav-text">解决过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新-bug"><span class="nav-number">1.3.</span> <span class="nav-text">新 bug</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dp-pro-的-select2-的bug"><span class="nav-number">1.</span> <span class="nav-text">dp-pro 的 select2 的bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dp-pro-中的源码"><span class="nav-number">1.1.</span> <span class="nav-text">dp-pro 中的源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决过程"><span class="nav-number">1.2.</span> <span class="nav-text">解决过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一次点击多次请求"><span class="nav-number">1.3.</span> <span class="nav-text">一次点击多次请求</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -882,7 +882,7 @@
         var disqus_config = function () {
           this.page.url = 'http://blog.fm7077.ml/2019/04/12/select2/';
           this.page.identifier = '2019/04/12/select2/';
-          this.page.title = '关于 select2 (不要看, 这是一篇废文)';
+          this.page.title = '关于 dp-pro 中 select2 的 bug';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://fm7077.disqus.com/embed.js';
