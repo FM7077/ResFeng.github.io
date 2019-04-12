@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.fm7077.ml/2018/09/03/markdown/C:/Users/Gfull/Desktop/main-qimg-357f02231aed5b6a7c815c576b09b29f.jpg">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535469052&di=180b8254faeacb9cf2757d38e369f810&imgtype=jpg&er=1&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F1c950a7b02087bf447b4b3d9f7d3572c11dfcfa2.jpg">
-<meta property="og:updated_time" content="2018-09-03T16:25:21.354Z">
+<meta property="og:updated_time" content="2019-04-07T06:51:45.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MarkDown 简介 [转]">
 <meta name="twitter:description" content="这是一篇用来练手的备忘笔记 有道云笔记MarkDown指南 (本文大部分内容来自该指南) 流程图部分的原文">
@@ -345,8 +345,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-04T00:25:21+08:00" content="2018-09-04">
-              2018-09-04
+            <time itemprop="dateUpdated" datetime="2019-04-07T14:51:45+08:00" content="2019-04-07">
+              2019-04-07
             </time>
           </span>
         
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  993
+                  991
                 </span>
               
 
@@ -521,23 +521,14 @@
 <li style="list-style: none"><input type="checkbox"> 未完成项目2</li>
 </ul>
 <h2 id="16-流程图"><a href="#16-流程图" class="headerlink" title="16. 流程图"></a>16. 流程图</h2><p>与代码块一样使用三个顿号包围, 使用的语言是flow, sequence, mermaid</p>
-<ol>
-<li>flow 流程图</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: start</span><br><span class="line">op=&gt;operation: my operation</span><br><span class="line">cond=&gt;condition: confirm?</span><br><span class="line">e=&gt;end: end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
-<ol>
-<li>mermaid</li>
-</ol>
-<pre class="mermaid">graph LR
+<h3 id="flow-流程图"><a href="#flow-流程图" class="headerlink" title="flow 流程图"></a>flow 流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: start</span><br><span class="line">op=&gt;operation: my operation</span><br><span class="line">cond=&gt;condition: confirm?</span><br><span class="line">e=&gt;end: end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<h3 id="mermaid"><a href="#mermaid" class="headerlink" title="mermaid"></a>mermaid</h3><pre class="mermaid">graph LR
 A[Hard edge]-->B(Round edge)
     B-->C{Decision}
     C-->|One| D[Result one]
     C-->|Two| E[Result two]</pre>
 
-<ol>
-<li>sequence</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<h3 id="sequence"><a href="#sequence" class="headerlink" title="sequence"></a>sequence</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -585,8 +576,8 @@ A[Hard edge]-->B(Round edge)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/03/something-about-unionId/" rel="next" title="关于 openId 和 unionId 的那些事">
-                <i class="fa fa-chevron-left"></i> 关于 openId 和 unionId 的那些事
+              <a href="/2018/09/03/how_to_build_your_own_blog_website/" rel="next" title="如何创建一个属于自己的博客">
+                <i class="fa fa-chevron-left"></i> 如何创建一个属于自己的博客
               </a>
             
           </div>
@@ -688,7 +679,7 @@ A[Hard edge]-->B(Round edge)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -699,7 +690,7 @@ A[Hard edge]-->B(Round edge)
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -710,7 +701,7 @@ A[Hard edge]-->B(Round edge)
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -779,7 +770,7 @@ A[Hard edge]-->B(Round edge)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MarkDown-笔记"><span class="nav-number">1.</span> <span class="nav-text">MarkDown 笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">1.1.</span> <span class="nav-text">1.标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空行"><span class="nav-number">2.2.</span> <span class="nav-text">2. 空行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-换行"><span class="nav-number">2.3.</span> <span class="nav-text">3. 换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-强调"><span class="nav-number">2.4.</span> <span class="nav-text">4. 强调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-转义符"><span class="nav-number">2.5.</span> <span class="nav-text">5. 转义符\</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-列表"><span class="nav-number">2.6.</span> <span class="nav-text">6. 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-无序列表"><span class="nav-number">2.6.1.</span> <span class="nav-text">6.1 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-有序列表"><span class="nav-number">2.6.2.</span> <span class="nav-text">6.2 有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-引用"><span class="nav-number">2.7.</span> <span class="nav-text">7. 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-粗体和斜体"><span class="nav-number">2.8.</span> <span class="nav-text">8. 粗体和斜体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-粗体"><span class="nav-number">2.8.1.</span> <span class="nav-text">8.1 粗体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-斜体"><span class="nav-number">2.8.2.</span> <span class="nav-text">8.2 斜体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗体二级标题"><span class="nav-number">2.9.</span> <span class="nav-text">粗体二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-字体-颜色-大小"><span class="nav-number">2.9.1.</span> <span class="nav-text">8.3 字体 颜色 大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-代码"><span class="nav-number">2.10.</span> <span class="nav-text">9. 代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-数学公式"><span class="nav-number">2.11.</span> <span class="nav-text">10. 数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-中划线"><span class="nav-number">2.12.</span> <span class="nav-text">11. 中划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-下划线"><span class="nav-number">2.13.</span> <span class="nav-text">12. 下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-插入链接和图片"><span class="nav-number">2.14.</span> <span class="nav-text">13. 插入链接和图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-链接"><span class="nav-number">2.14.1.</span> <span class="nav-text">13.1 链接:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-图片"><span class="nav-number">2.14.2.</span> <span class="nav-text">13.2 图片:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-分割线"><span class="nav-number">2.15.</span> <span class="nav-text">14. 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-待办-清单列表"><span class="nav-number">2.16.</span> <span class="nav-text">15. 待办, 清单列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-流程图"><span class="nav-number">2.17.</span> <span class="nav-text">16. 流程图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MarkDown-笔记"><span class="nav-number">1.</span> <span class="nav-text">MarkDown 笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">1.1.</span> <span class="nav-text">1.标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空行"><span class="nav-number">2.2.</span> <span class="nav-text">2. 空行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-换行"><span class="nav-number">2.3.</span> <span class="nav-text">3. 换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-强调"><span class="nav-number">2.4.</span> <span class="nav-text">4. 强调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-转义符"><span class="nav-number">2.5.</span> <span class="nav-text">5. 转义符\</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-列表"><span class="nav-number">2.6.</span> <span class="nav-text">6. 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-无序列表"><span class="nav-number">2.6.1.</span> <span class="nav-text">6.1 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-有序列表"><span class="nav-number">2.6.2.</span> <span class="nav-text">6.2 有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-引用"><span class="nav-number">2.7.</span> <span class="nav-text">7. 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-粗体和斜体"><span class="nav-number">2.8.</span> <span class="nav-text">8. 粗体和斜体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-粗体"><span class="nav-number">2.8.1.</span> <span class="nav-text">8.1 粗体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-斜体"><span class="nav-number">2.8.2.</span> <span class="nav-text">8.2 斜体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗体二级标题"><span class="nav-number">2.9.</span> <span class="nav-text">粗体二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-字体-颜色-大小"><span class="nav-number">2.9.1.</span> <span class="nav-text">8.3 字体 颜色 大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-代码"><span class="nav-number">2.10.</span> <span class="nav-text">9. 代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-数学公式"><span class="nav-number">2.11.</span> <span class="nav-text">10. 数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-中划线"><span class="nav-number">2.12.</span> <span class="nav-text">11. 中划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-下划线"><span class="nav-number">2.13.</span> <span class="nav-text">12. 下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-插入链接和图片"><span class="nav-number">2.14.</span> <span class="nav-text">13. 插入链接和图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-链接"><span class="nav-number">2.14.1.</span> <span class="nav-text">13.1 链接:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-图片"><span class="nav-number">2.14.2.</span> <span class="nav-text">13.2 图片:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-分割线"><span class="nav-number">2.15.</span> <span class="nav-text">14. 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-待办-清单列表"><span class="nav-number">2.16.</span> <span class="nav-text">15. 待办, 清单列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-流程图"><span class="nav-number">2.17.</span> <span class="nav-text">16. 流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flow-流程图"><span class="nav-number">2.17.1.</span> <span class="nav-text">flow 流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mermaid"><span class="nav-number">2.17.2.</span> <span class="nav-text">mermaid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequence"><span class="nav-number">2.17.3.</span> <span class="nav-text">sequence</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -799,7 +790,7 @@ A[Hard edge]-->B(Round edge)
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
 
   <span class="with-love">
     <i class="fa fa-user"></i>
@@ -814,7 +805,7 @@ A[Hard edge]-->B(Round edge)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.1k</span>
+    <span title="Site words total count">11.9k</span>
   
   
   <span>

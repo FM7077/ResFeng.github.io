@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="关于这个程序的一些脑洞">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T09:39:01.093Z">
+<meta property="og:updated_time" content="2018-11-07T10:29:13.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="师傅单据RM">
 <meta name="twitter:description" content="关于这个程序的一些脑洞">
@@ -342,8 +342,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2018-09-28T17:39:01+08:00" content="2018-09-28">
-              2018-09-28
+            <time itemprop="dateUpdated" datetime="2018-11-07T18:29:13+08:00" content="2018-11-07">
+              2018-11-07
             </time>
           </span>
         
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  759
+                  1.1k
                 </span>
               
 
@@ -435,7 +435,7 @@
 <h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><ol>
 <li>BS架构</li>
 <li>Idea</li>
-<li>MySQL</li>
+<li>MySQL 或 SQLServer</li>
 <li>脚架 <a href="https://gitee.com/zhocuhenglin/dp-pro" target="_blank" rel="noopener">dp-pro</a></li>
 </ol>
 <h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ol>
@@ -457,7 +457,7 @@
 <li>自动提醒上一次购买的价格</li>
 <li>根据实际情况看是否要实现单位转换</li>
 </ol>
-<h1 id="库结构设计"><a href="#库结构设计" class="headerlink" title="库结构设计"></a>库结构设计</h1><h2 id="1-货物库"><a href="#1-货物库" class="headerlink" title="1. 货物库"></a>1. 货物库</h2><table>
+<h1 id="库结构设计"><a href="#库结构设计" class="headerlink" title="库结构设计"></a>库结构设计</h1><h2 id="货物库-goods"><a href="#货物库-goods" class="headerlink" title="货物库( goods )"></a>货物库( goods )</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -475,21 +475,15 @@
 </tr>
 <tr>
 <td>good_name</td>
-<td>varchar(60)</td>
+<td>varchar(100)</td>
 <td>not null</td>
-<td>到目前为止 60 位是够用的, 但…</td>
+<td>货物品名</td>
 </tr>
 <tr>
 <td>good_unit</td>
 <td>varchar(6)</td>
 <td>not null</td>
 <td>单位</td>
-</tr>
-<tr>
-<td>type_id</td>
-<td>varchar(5)</td>
-<td>not null</td>
-<td>所属类型 id</td>
 </tr>
 <tr>
 <td>brand_id</td>
@@ -499,37 +493,37 @@
 </tr>
 <tr>
 <td>factory_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>默认 0</td>
 <td>厂价</td>
 </tr>
 <tr>
 <td>purchase_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>默认 0</td>
 <td>进货价</td>
 </tr>
 <tr>
 <td>wholesale_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>默认 0</td>
 <td>批发价</td>
 </tr>
 <tr>
 <td>retail_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>默认 0</td>
 <td>零售价</td>
 </tr>
 <tr>
 <td>stock</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>默认 0</td>
 <td>库存</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-类型库"><a href="#2-类型库" class="headerlink" title="2. 类型库"></a>2. 类型库</h2><table>
+<h2 id="历史价格库-price-history"><a href="#历史价格库-price-history" class="headerlink" title="历史价格库( price_history )"></a>历史价格库( price_history )</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -540,20 +534,56 @@
 </thead>
 <tbody>
 <tr>
-<td>type_id</td>
-<td>varchar(5)</td>
-<td>主键</td>
-<td>t+4位序列号</td>
-</tr>
-<tr>
-<td>type_name</td>
+<td>price_id</td>
 <td>varchar(10)</td>
-<td></td>
-<td>类名</td>
+<td>pk</td>
+<td>货物id+3位序列号</td>
+</tr>
+<tr>
+<td>good_id</td>
+<td>varchar(7)</td>
+<td>not null</td>
+<td>货物id</td>
+</tr>
+<tr>
+<td>factory_price</td>
+<td>DECIMAL( 6, 2 )</td>
+<td>not null</td>
+<td>厂价</td>
+</tr>
+<tr>
+<td>purchase_price</td>
+<td>DECIMAL( 6, 2 )</td>
+<td>not null</td>
+<td>进货价</td>
+</tr>
+<tr>
+<td>wholesale_price</td>
+<td>DECIMAL( 6, 2 )</td>
+<td>not null</td>
+<td>批发价</td>
+</tr>
+<tr>
+<td>retail_price</td>
+<td>DECIMAL( 6, 2 )</td>
+<td>not null</td>
+<td>零售价</td>
+</tr>
+<tr>
+<td>gmt_create</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>gmr_modified</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>修改时间, 默认与创建时间同日</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-品牌库"><a href="#3-品牌库" class="headerlink" title="3. 品牌库"></a>3. 品牌库</h2><table>
+<h2 id="品牌类型库-brand"><a href="#品牌类型库-brand" class="headerlink" title="品牌类型库( brand )"></a>品牌类型库( brand )</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -564,20 +594,26 @@
 </thead>
 <tbody>
 <tr>
-<td>brand_id</td>
-<td>varchar(5)</td>
+<td>id</td>
+<td>varchar(6)</td>
 <td>主键</td>
-<td>b+4位序列号</td>
+<td>6位序列号</td>
 </tr>
 <tr>
-<td>brand_id</td>
-<td>varchar(20)</td>
-<td></td>
-<td>品牌名</td>
+<td>parent_id</td>
+<td>varchar(6)</td>
+<td>not null</td>
+<td>父id, 类的父id 为0</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>类名/品牌名</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4-订单库"><a href="#4-订单库" class="headerlink" title="4. 订单库"></a>4. 订单库</h2><table>
+<h2 id="单据库-bill-title"><a href="#单据库-bill-title" class="headerlink" title="单据库( bill_title )"></a>单据库( bill_title )</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -607,13 +643,25 @@
 </tr>
 <tr>
 <td>customer_id</td>
-<td>varchar(10)</td>
+<td>varchar(7)</td>
 <td>not null</td>
-<td>顾客id 若是已存于顾客库的直接引用顾客库的 id, 若是零售单则自建一个序列号: tc + 8位序列号(该序列号根据 开头为 tc 的数量实现自增)</td>
+<td>顾客 id 若是已存于顾客库的直接引用顾客库的 id, 若是零售单则自建一个序列号: tc + 8位序列号(该序列号根据 开头为 tc 的数量实现自增)</td>
+</tr>
+<tr>
+<td>bill_status</td>
+<td>int</td>
+<td>默认0</td>
+<td>0: 出库单, 1: 退货的</td>
+</tr>
+<tr>
+<td>place_id</td>
+<td>varchar(10)</td>
+<td></td>
+<td>工地 id</td>
 </tr>
 </tbody>
 </table>
-<h2 id="5-订单详细库"><a href="#5-订单详细库" class="headerlink" title="5. 订单详细库"></a>5. 订单详细库</h2><table>
+<h2 id="单据详细库-bill-detail"><a href="#单据详细库-bill-detail" class="headerlink" title="单据详细库( bill_detail )"></a>单据详细库( bill_detail )</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -624,16 +672,16 @@
 </thead>
 <tbody>
 <tr>
-<td>detail_id</td>
-<td>varchar(15)</td>
+<td>bdetail_id</td>
+<td>varchar(16)</td>
 <td>pk</td>
-<td>所属订单 id + 3位序列号</td>
+<td>所属单据 id + 3位序列号</td>
 </tr>
 <tr>
 <td>bill_id</td>
 <td>varchar(13)</td>
 <td>not null</td>
-<td>所属订单 id</td>
+<td>所属单据 id</td>
 </tr>
 <tr>
 <td>good_id</td>
@@ -643,7 +691,7 @@
 </tr>
 <tr>
 <td>good_name</td>
-<td>varchar(60)</td>
+<td>varchar(100)</td>
 <td>not null</td>
 <td>货物名称</td>
 </tr>
@@ -655,37 +703,37 @@
 </tr>
 <tr>
 <td>factory_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>not null</td>
 <td>厂价</td>
 </tr>
 <tr>
 <td>purchase_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>not null</td>
 <td>进货价</td>
 </tr>
 <tr>
 <td>wholesale_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>not null</td>
 <td>批发价</td>
 </tr>
 <tr>
 <td>retail_price</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>not null</td>
 <td>零售价</td>
 </tr>
 <tr>
 <td>num</td>
-<td>float</td>
+<td>DECIMAL( 6, 2 )</td>
 <td>not null</td>
 <td>数量</td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-顾客库"><a href="#6-顾客库" class="headerlink" title="6. 顾客库"></a>6. 顾客库</h2><table>
+<h2 id="顾客库"><a href="#顾客库" class="headerlink" title="顾客库"></a>顾客库</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -697,9 +745,9 @@
 <tbody>
 <tr>
 <td>customer_id</td>
-<td>varchar(10)</td>
+<td>varchar(7)</td>
 <td>pk</td>
-<td>ct + 8位序列号</td>
+<td>ct + 5位序列号</td>
 </tr>
 <tr>
 <td>customer_name</td>
@@ -721,7 +769,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="7-工地库"><a href="#7-工地库" class="headerlink" title="7. 工地库"></a>7. 工地库</h2><table>
+<h2 id="工地库"><a href="#工地库" class="headerlink" title="工地库"></a>工地库</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -733,13 +781,13 @@
 <tbody>
 <tr>
 <td>place_id</td>
-<td>varchar(5)</td>
+<td>varchar(10)</td>
 <td>pk</td>
-<td>cp + 3位序列号</td>
+<td>cp + 8位序列号</td>
 </tr>
 <tr>
 <td>customer_id</td>
-<td>varchar(10)</td>
+<td>varchar(7)</td>
 <td>not null</td>
 <td>所属顾客 id</td>
 </tr>
@@ -763,7 +811,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="8-临时顾客库"><a href="#8-临时顾客库" class="headerlink" title="8. 临时顾客库"></a>8. 临时顾客库</h2><table>
+<h2 id="临时顾客库"><a href="#临时顾客库" class="headerlink" title="临时顾客库"></a>临时顾客库</h2><table>
 <thead>
 <tr>
 <th>列名</th>
@@ -793,6 +841,108 @@
 </tr>
 </tbody>
 </table>
+<h2 id="订单库"><a href="#订单库" class="headerlink" title="订单库"></a>订单库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>varchar(13)</td>
+<td>pk</td>
+<td>o + 年月日+6位序列号</td>
+</tr>
+<tr>
+<td>gmr_create</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>创建时间 年-月-日</td>
+</tr>
+<tr>
+<td>place_id</td>
+<td>varchar(10)</td>
+<td>not null</td>
+<td>工地 id</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>int</td>
+<td>默认 0</td>
+<td>0: 已录入, 1: 未录入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="订单详细库"><a href="#订单详细库" class="headerlink" title="订单详细库"></a>订单详细库</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>odetail_id</td>
+<td>varchar(16)</td>
+<td>pk</td>
+<td>所属订单 id + 3位序列号</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>varchar(13)</td>
+<td>not null</td>
+<td>所属订单 id</td>
+</tr>
+<tr>
+<td>good_id</td>
+<td>varchar(7)</td>
+<td>not null</td>
+<td>货物 id</td>
+</tr>
+<tr>
+<td>good_name</td>
+<td>varchar(100)</td>
+<td>not null</td>
+<td>货物名称</td>
+</tr>
+<tr>
+<td>num</td>
+<td>DECIMAL( 6, 2 )</td>
+<td>not null</td>
+<td>数量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="微信推送单据"><a href="#微信推送单据" class="headerlink" title="微信推送单据"></a>微信推送单据</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>属性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bill_id</td>
+<td>varchar(13)</td>
+<td>pk</td>
+<td>单据 id</td>
+</tr>
+</tbody>
+</table>
+<h1 id="开单定价"><a href="#开单定价" class="headerlink" title="开单定价"></a>开单定价</h1><pre class="mermaid">graph TB
+a[新增货物]-->|搜索上一次开单价格|b{是否存在}
+    b-->|是|c[根据上次开单价格]
+    b-->|否|d[根据现有价格]</pre>
+
+<h1 id="微信小程序需要的接口"><a href="#微信小程序需要的接口" class="headerlink" title="微信小程序需要的接口"></a>微信小程序需要的接口</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">检查链接</span><br><span class="line">根据 unionId 检索用户表 - 查看用户是否存在</span><br><span class="line">根据 unionId 检索 temp_customer 查看临时用户是否存在</span><br><span class="line">录入 temp_customer</span><br><span class="line">检索 brand 库</span><br><span class="line">根据 brandId 检索 good 库 - id 品名</span><br><span class="line">提交 order, 包括 order_title, order_detail</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -850,6 +1000,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/11/gaodeAPI/" rel="prev" title="高德地图 JS API">
+                高德地图 JS API <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -940,7 +1094,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -951,7 +1105,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -962,7 +1116,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1031,7 +1185,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">1.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库结构设计"><span class="nav-number">3.</span> <span class="nav-text">库结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-货物库"><span class="nav-number">3.1.</span> <span class="nav-text">1. 货物库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-类型库"><span class="nav-number">3.2.</span> <span class="nav-text">2. 类型库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-品牌库"><span class="nav-number">3.3.</span> <span class="nav-text">3. 品牌库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-订单库"><span class="nav-number">3.4.</span> <span class="nav-text">4. 订单库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-订单详细库"><span class="nav-number">3.5.</span> <span class="nav-text">5. 订单详细库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-顾客库"><span class="nav-number">3.6.</span> <span class="nav-text">6. 顾客库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-工地库"><span class="nav-number">3.7.</span> <span class="nav-text">7. 工地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-临时顾客库"><span class="nav-number">3.8.</span> <span class="nav-text">8. 临时顾客库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">1.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库结构设计"><span class="nav-number">3.</span> <span class="nav-text">库结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#货物库-goods"><span class="nav-number">3.1.</span> <span class="nav-text">货物库( goods )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史价格库-price-history"><span class="nav-number">3.2.</span> <span class="nav-text">历史价格库( price_history )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#品牌类型库-brand"><span class="nav-number">3.3.</span> <span class="nav-text">品牌类型库( brand )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单据库-bill-title"><span class="nav-number">3.4.</span> <span class="nav-text">单据库( bill_title )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单据详细库-bill-detail"><span class="nav-number">3.5.</span> <span class="nav-text">单据详细库( bill_detail )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顾客库"><span class="nav-number">3.6.</span> <span class="nav-text">顾客库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工地库"><span class="nav-number">3.7.</span> <span class="nav-text">工地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临时顾客库"><span class="nav-number">3.8.</span> <span class="nav-text">临时顾客库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#订单库"><span class="nav-number">3.9.</span> <span class="nav-text">订单库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#订单详细库"><span class="nav-number">3.10.</span> <span class="nav-text">订单详细库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信推送单据"><span class="nav-number">3.11.</span> <span class="nav-text">微信推送单据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开单定价"><span class="nav-number">4.</span> <span class="nav-text">开单定价</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序需要的接口"><span class="nav-number">5.</span> <span class="nav-text">微信小程序需要的接口</span></a></li></ol></div>
             
 
           </div>
@@ -1051,7 +1205,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
 
   <span class="with-love">
     <i class="fa fa-user"></i>
@@ -1066,7 +1220,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.1k</span>
+    <span title="Site words total count">11.9k</span>
   
   
   <span>
