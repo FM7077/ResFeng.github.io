@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="为了铲当年自己拉的粑粑不得不借用 Python. 自己拉的哭着也要铲掉. python for win 下载地址 Reference link 参考链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T04:07:04.706Z">
+<meta property="og:updated_time" content="2019-04-17T06:20:32.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 Python 读取 csv 文件( 包括一丁点 python 使用教程)">
 <meta name="twitter:description" content="为了铲当年自己拉的粑粑不得不借用 Python. 自己拉的哭着也要铲掉. python for win 下载地址 Reference link 参考链接">
@@ -304,7 +304,7 @@
     <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2019/04/16/python-read-csv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="name" content="一颗牛肉丸">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/GNY.jpg">
     </span>
@@ -342,7 +342,7 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2019-04-17T12:07:04+08:00" content="2019-04-17">
+            <time itemprop="dateUpdated" datetime="2019-04-17T14:20:32+08:00" content="2019-04-17">
               2019-04-17
             </time>
           </span>
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  403
+                  438
                 </span>
               
 
@@ -466,6 +466,9 @@
 </table>
 <h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 读取csv至字典</span></span><br><span class="line"><span class="comment"># 如果是 win 路径记得用 '/'</span></span><br><span class="line">csvFile = open(<span class="string">"test.csv"</span>, <span class="string">"r"</span>)</span><br><span class="line">reader = csv.reader(csvFile)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立空字典</span></span><br><span class="line">result = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> reader:</span><br><span class="line">    print(item)</span><br><span class="line">csvFile.close()</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&apos;name&apos;, &apos;age&apos;, &apos;city&apos;]</span><br><span class="line">[&apos;WNX&apos;, &apos;0&apos;, &apos;PK&apos;]</span><br><span class="line">[&apos;HM&apos;, &apos;+1&apos;, &apos;SH&apos;]</span><br><span class="line">[&apos;HLS&apos;, &apos;93&apos;, &apos;BM&apos;]</span><br></pre></td></tr></table></figure>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, row <span class="keyword">in</span> data.iterrows():</span><br><span class="line">    print(row[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<h1 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.to_csv(path, index=<span class="keyword">False</span>,encoding=<span class="string">'utf_8_sig'</span>)</span><br></pre></td></tr></table></figure>
+<p>用 ‘utf_8_sig’ 编码, 防止用 excel 打开发现是乱码</p>
 <h1 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h1><p>一个是编码造成一个是 code runner 自身地问题</p>
 <p>编码地问题网上很多, code runner 可以通过 <a href="https://www.cnblogs.com/zhaoshizi/p/9050768.html" target="_blank" rel="noopener">参考链接</a> 解决</p>
 <ol>
@@ -513,7 +516,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    一颗牛肉丸的回忆
+    一颗牛肉丸
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -556,6 +559,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/17/python-mysql/" rel="prev" title="python 和 mysql 互动">
+                python 和 mysql 互动 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -633,9 +640,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/GNY.jpg"
-                alt="一颗牛肉丸的回忆" />
+                alt="一颗牛肉丸" />
             
-              <p class="site-author-name" itemprop="name">一颗牛肉丸的回忆</p>
+              <p class="site-author-name" itemprop="name">一颗牛肉丸</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -646,7 +653,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -657,7 +664,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -668,7 +675,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -737,7 +744,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Python"><span class="nav-number">1.</span> <span class="nav-text">安装 Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSV-文件"><span class="nav-number">2.</span> <span class="nav-text">CSV 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取"><span class="nav-number">3.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中文乱码"><span class="nav-number">4.</span> <span class="nav-text">中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入外部包"><span class="nav-number">5.</span> <span class="nav-text">导入外部包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于-SyntaxError-invalid-syntax"><span class="nav-number">6.</span> <span class="nav-text">关于 SyntaxError: invalid syntax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优雅地在-VS-Code-上运行-python-文件"><span class="nav-number">7.</span> <span class="nav-text">优雅地在 VS Code 上运行 python 文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Python"><span class="nav-number">1.</span> <span class="nav-text">安装 Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSV-文件"><span class="nav-number">2.</span> <span class="nav-text">CSV 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取"><span class="nav-number">3.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历"><span class="nav-number">4.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入"><span class="nav-number">5.</span> <span class="nav-text">写入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中文乱码"><span class="nav-number">6.</span> <span class="nav-text">中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入外部包"><span class="nav-number">7.</span> <span class="nav-text">导入外部包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于-SyntaxError-invalid-syntax"><span class="nav-number">8.</span> <span class="nav-text">关于 SyntaxError: invalid syntax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优雅地在-VS-Code-上运行-python-文件"><span class="nav-number">9.</span> <span class="nav-text">优雅地在 VS Code 上运行 python 文件</span></a></li></ol></div>
             
 
           </div>
@@ -772,7 +779,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.5k</span>
+    <span title="Site words total count">11.5k</span>
   
   
   <span>
