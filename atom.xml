@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-04-30T06:55:07.390Z</updated>
+  <updated>2019-05-12T08:49:31.114Z</updated>
   <id>http://blog.fm7077.ml/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初试 Flutter</title>
+    <link href="http://blog.fm7077.ml/2019/05/12/hello-flutter/"/>
+    <id>http://blog.fm7077.ml/2019/05/12/hello-flutter/</id>
+    <published>2019-05-12T08:17:40.000Z</published>
+    <updated>2019-05-12T08:49:31.114Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>坑太多了</p></blockquote><a id="more"></a><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>突然抽风要试试 Flutter. 然后就一路踩着坑过来了.</p><p>系统: win10 1803</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了.</p><ol><li><p><a href="https://flutter.dev/docs/get-started/install" target="_blank" rel="noopener">Flutter 下载地址</a> 谷歌非常良心地提供了中国专用下载地址.</p></li><li><p>解压下载后的压缩包到一个不需要管理员权限地地址</p></li><li><p>进入 ~/flutter/bin 复制地址</p></li><li><p>系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 )</p><p> 打开 powershell 输入 flutter doctor 可看到检测信息</p></li><li><p>用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: <a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p><p>PUB_HOSTED_URL 值为: <a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p><p>这一步是方便国内下载库什么的</p></li><li><p>vs code 中安装 dart, flutter 这两个插件</p></li><li><p>ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化</p><p> 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器.</p></li></ol><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>Flutter 入门的坑太多了.</p><h2 id="卡在-flutter-packages-get"><a href="#卡在-flutter-packages-get" class="headerlink" title="卡在 flutter packages get"></a>卡在 flutter packages get</h2><p>这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 <a href="https://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/">博文</a> ), 然后输入 flutter packages get, 等待下完</p><h2 id="卡在-installing-build-app-outputs-apk-app-apk"><a href="#卡在-installing-build-app-outputs-apk-app-apk" class="headerlink" title="卡在 installing build\app\outputs\apk\app.apk"></a>卡在 installing build\app\outputs\apk\app.apk</h2><p>在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效.</p><p>在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按.</p><h2 id="卡在creating-flutter-project"><a href="#卡在creating-flutter-project" class="headerlink" title="卡在creating flutter project"></a>卡在creating flutter project</h2><p>这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙.</p><p>解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;坑太多了&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+    
+    
+      <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
+    
+      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
+    
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
+  </entry>
   
   <entry>
     <title>在 firebase 上部署 hexo 静态博客</title>
@@ -119,9 +147,9 @@
       <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
     
     
-      <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
-    
       <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
+    
+      <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
     
   </entry>
   
@@ -288,9 +316,9 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
     
@@ -461,6 +489,8 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
     
       <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
@@ -470,8 +500,6 @@
       <category term="typora" scheme="http://blog.fm7077.ml/tags/typora/"/>
     
       <category term="next" scheme="http://blog.fm7077.ml/tags/next/"/>
-    
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
   </entry>
   
@@ -527,35 +555,6 @@
       <category term="bot" scheme="http://blog.fm7077.ml/tags/bot/"/>
     
       <category term="telegram" scheme="http://blog.fm7077.ml/tags/telegram/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序的那些坑</title>
-    <link href="http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/"/>
-    <id>http://blog.fm7077.ml/2018/09/03/tips_for_wechat_small_app/</id>
-    <published>2018-09-03T10:00:00.000Z</published>
-    <updated>2019-04-17T04:08:09.485Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一些关于做微信小程序时遇到的问题及一些小技巧</p><p>顺便再次吐槽一下, 官方文档写得太烂了</p></blockquote><a id="more"></a><h1 id="Toast-现已更改为-showToast"><a href="#Toast-现已更改为-showToast" class="headerlink" title="Toast 现已更改为 showToast"></a>Toast 现已更改为 showToast</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">      title: <span class="string">'内容'</span>,</span><br><span class="line">      icon: <span class="string">'提示图标'</span>,</span><br><span class="line">      duration: 保持时间, 单位为毫秒</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h1 id="js-中动态更改组件属性"><a href="#js-中动态更改组件属性" class="headerlink" title="js 中动态更改组件属性"></a>js 中动态更改组件属性</h1><ol><li>组件要动态变化的属性设置一个别名</li><li>在 js 文件中的 data 里新建一个变量, 与别名一样的名字</li><li>在函数中动态更改</li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"confirmSub"</span> <span class="attr">loading</span>=<span class="string">"&#123;&#123;loading&#125;&#125;"</span>&gt;</span>确认<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">  loading: <span class="literal">false</span>,</span><br><span class="line">&#125;,</span><br><span class="line">confirmSub: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    loading: !<span class="keyword">this</span>.data.loading,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="监听器里调用上一级变量"><a href="#监听器里调用上一级变量" class="headerlink" title="监听器里调用上一级变量"></a>监听器里调用上一级变量</h1><p>在监听器或定时器里使用的参数变量定义时必须加 const 关键字</p><p>this 转换为 that, 用来访问上一级的变量</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">testListener: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span>;</span><br><span class="line">    that.setData(&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        that.setData(&#123;</span><br><span class="line">            testConst: !that.data.testConst,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="输入框剔除无效字符"><a href="#输入框剔除无效字符" class="headerlink" title="输入框剔除无效字符"></a>输入框剔除无效字符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeSpecialChar</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> pattern = <span class="regexp">/[0-9]&#123;1&#125;/</span>; <span class="comment">// 除了0-9其余全部剔除</span></span><br><span class="line">  <span class="keyword">var</span> rs = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> single = s.substr(i,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(single.match(pattern))&#123;</span><br><span class="line">      rs = rs+single;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> rs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="点击按钮后获取输入框内容"><a href="#点击按钮后获取输入框内容" class="headerlink" title="点击按钮后获取输入框内容"></a>点击按钮后获取输入框内容</h1><p>一种是把输入框和按钮放在一个表格即 <form> 中, 然后输入框设置别名, 表格绑定事件, 在事件回调函数中通过别名获取输入框内容</form></p><p>另一种是每个输入框都绑定事件, 同时为每个输入框设一个变量来实时接收输入框的文字, 再在按钮的事件中通过变量来间接读取</p><h2 id="模板引用"><a href="#模板引用" class="headerlink" title="模板引用"></a>模板引用</h2><ol><li>先建立模板: xxx.wxml</li><li>在要使用这个模板的页面引用模板: &lt;import src=”../../xxx.wxml&gt; 并在该页面使用模板 <template is="模板名" data="要传入的参数"></template></li></ol><h1 id="Please-do-not-register-multiple-Pages-in-undefined-js-错误"><a href="#Please-do-not-register-multiple-Pages-in-undefined-js-错误" class="headerlink" title="Please do not register multiple Pages in undefined.js 错误"></a>Please do not register multiple Pages in undefined.js 错误</h1><p>检查 app.js 中是否有 Page({}) 删去即可</p><h2 id="关于-input-的-maxlength"><a href="#关于-input-的-maxlength" class="headerlink" title="关于 input 的 maxlength"></a>关于 input 的 maxlength</h2><p>在模拟器上测试是正常的, 但在手机上测试时, 得输入到 maxlength 指定的长度才不会被认为是空的.</p><p>为解决此 bug, 直接不采用 maxlength, 而是在监听器里实时判断输入字符长度, 截取规定长度字符串</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeExtraWorld</span>(<span class="params">s, num</span>) </span>&#123;<span class="comment">//保留字符串前几位, s: 要改的字符串, num: 设置长度</span></span><br><span class="line">  <span class="keyword">if</span>(s.length &lt;= num)&#123;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> rs = s.slice(<span class="number">0</span>, num);</span><br><span class="line">    <span class="keyword">return</span> rs;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="flex-流布局的居中要点"><a href="#flex-流布局的居中要点" class="headerlink" title="flex 流布局的居中要点"></a>flex 流布局的居中要点</h2><p>水平居中: justify-content: center;</p><p>垂直居中: align-items: center;</p><font color="#ee3333" blod="" size="17">控件要设置宽和高 !</font><h1 id="POST-请求相关"><a href="#POST-请求相关" class="headerlink" title="POST 请求相关"></a>POST 请求相关</h1><blockquote><p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-request.html#wxrequestobject" target="_blank" rel="noopener">官方文档</a></p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">wx.request(&#123;</span><br><span class="line">  url: <span class="string">'127.0.0.1'</span>, <span class="comment">//服务器链接</span></span><br><span class="line">  method: <span class="string">'POST'</span>, <span class="comment">//请求类型, 注意大写</span></span><br><span class="line">  data: &#123;<span class="comment">//请求数据</span></span><br><span class="line">     x: <span class="string">''</span> ,</span><br><span class="line">     y: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  header: &#123;</span><br><span class="line">      <span class="comment">//默认值是: 'content-type': 'application/json', 会对数据进行 JSON 序列化</span></span><br><span class="line">  <span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span> <span class="comment">//一般使用这个, 小程序会将数据转换成 String</span></span><br><span class="line">  &#125;,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)<span class="comment">//服务端返回的数据</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.header)<span class="comment">//服务端返回的 HTTP Response Header</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.statusCode)<span class="comment">//服务端返回的 HTTP 状态码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h1 id="HTTPS-证书"><a href="#HTTPS-证书" class="headerlink" title="HTTPS 证书"></a>HTTPS 证书</h1><p>看到有人吐槽, 赶紧先 mark 下</p><p>https 不要用startcom提供的免费证书! </p><h1 id="中止代码执行"><a href="#中止代码执行" class="headerlink" title="中止代码执行"></a>中止代码执行</h1><p>需求: 有时候需要判断是否能联网, 用户是否存在, 若为否则跳转到404界面或其他错误界面, 并同时中止小程序继续进行</p><p>例: 在微信小程序加载的时候判断是否能连上服务器, 若不能则跳转 error 界面</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js 代码</span></span><br><span class="line">onLaunch: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">this</span>.testConnect(),</span><br><span class="line">     其余代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testConnect: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">  url: <span class="keyword">this</span>.globalData.serverAddress + <span class="string">'/CheckConnection'</span>,</span><br><span class="line">  method: <span class="string">'POST'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    test: <span class="string">'1'</span></span><br><span class="line">        &#125;,</span><br><span class="line">  header: &#123;</span><br><span class="line">    <span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (res.statusCode === <span class="number">200</span> &amp; res.data === <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'测试成功'</span>)</span><br><span class="line">                其余代码&lt;-------------------------------------</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                wx.navigateTo(&#123;</span><br><span class="line">                url: <span class="string">'/pages/error/error'</span>,</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'测试失败'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>如果不进行特别处理, 其余代码还是会被运行</p><p>emmmmm, 傻逼了, 其实只要把<em>其余代码</em>放在 if 里就可以了</p><p>然后这个时候你会发现 else 中的跳转并不起作用</p><p>然后我就用了 ==wx.reLaunch== 就可以跳转了, 原因暂不知. 关于 wx.reLaunch 的介绍见下面</p><h1 id="你可能不知道的多种跳转方法"><a href="#你可能不知道的多种跳转方法" class="headerlink" title="你可能不知道的多种跳转方法"></a>你可能不知道的多种跳转方法</h1><blockquote><p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxnavigatetoobject" target="_blank" rel="noopener">官方文档</a></p><p>wx.navigateTo, wx.redirectTo, wx.reLaunch</p></blockquote><p>一般用的可能 wx.navigate 比较多, 它可以跳转到5层级以内的任何页面, 这种跳转方法不会销毁其他页面, 跳转后也能返回上一层页面, 超过5个层级不会跳转.</p><p>为了解决这个问题, 找到了 wx.redirectTo, 它可以跳转到任何层级的页面, 该跳转方法会销毁上一层的页面( 不是所有 ), 因此跳转过去后无法返回到上一层页面. 对于不想再返回的页面, 导向的时候就可以用 wx.redirectTo.</p><p>wx.reLaunch: 清空页面栈, 导航到指定页面.</p><hr><p>未完待续</p><h1 id="遇到-bug"><a href="#遇到-bug" class="headerlink" title="遇到 bug"></a>遇到 bug</h1><h2 id="本地测试-localhost-服务器本地ip"><a href="#本地测试-localhost-服务器本地ip" class="headerlink" title="本地测试 localhost / 服务器本地ip"></a>本地测试 localhost / 服务器本地ip</h2><p>用模拟器测试时如果请求服务器链接为 localhost 那么没什么问题, 但如果用的是服务器本地 ip 时会报503 错误, 但服务器又能收到模拟器发出的消息, 真是神奇.</p><p>如果用真机测试那么当然不能写 localhost 了, 而应该写 服务器本地 ip, 这时就很正常~ 就是很神奇</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;一些关于做微信小程序时遇到的问题及一些小技巧&lt;/p&gt;
-&lt;p&gt;顺便再次吐槽一下, 官方文档写得太烂了&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-      <category term="web服务器" scheme="http://blog.fm7077.ml/tags/web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="java" scheme="http://blog.fm7077.ml/tags/java/"/>
     
   </entry>
   

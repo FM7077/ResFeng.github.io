@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初试 Flutter]]></title>
+    <url>%2F2019%2F05%2F12%2Fhello-flutter%2F</url>
+    <content type="text"><![CDATA[坑太多了 背景突然抽风要试试 Flutter. 然后就一路踩着坑过来了. 系统: win10 1803 安装由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了. Flutter 下载地址 谷歌非常良心地提供了中国专用下载地址. 解压下载后的压缩包到一个不需要管理员权限地地址 进入 ~/flutter/bin 复制地址 系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 ) 打开 powershell 输入 flutter doctor 可看到检测信息 用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: https://storage.flutter-io.cn PUB_HOSTED_URL 值为: https://pub.flutter-io.cn 这一步是方便国内下载库什么的 vs code 中安装 dart, flutter 这两个插件 ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器. 坑Flutter 入门的坑太多了. 卡在 flutter packages get这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 博文 ), 然后输入 flutter packages get, 等待下完 卡在 installing build\app\outputs\apk\app.apk在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效. 在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按. 卡在creating flutter project这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙. 解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.]]></content>
+      <categories>
+        <category>flutter</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>flutter</tag>
+        <tag>TODO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在 firebase 上部署 hexo 静态博客]]></title>
     <url>%2F2019%2F04%2F30%2Fhexo-deploy-on-firebase%2F</url>
     <content type="text"><![CDATA[firebase 是股沟的一个 app 和 web 应用程序开发平台, 可以在上面部署静态博客. 本文主要 参考链接 参考链接里有些东西 注册 firebase, 创建新项目firebase 官网) 按照提示创建, 这里没什么难度. 关于自定义域名( 如果没有跳过这一步 )firebase 默认提供了一个 项目id.firebaseapp.com 的域名. 要关联自己的域名的话 在 开发/Hosting 中点击 “关联域名” 填写顶级域名( domain.com ), 或子域名( child.domain.com ) 在 DNS 提供商( 一般域名服务商也有这功能 ) 填写 TXT 记录: 如我在 freenom 买的域名, 在域名的 DNS management 页面中填写 name: 子域名或不填代表顶级域名( child/null ) type: TXT target: 谷歌提供的一个验证码 验证 成功后谷歌会给出两个 ip 地址, 跟步骤3类似填入 DNS 管理页面中. type 为A 坐等谷歌部署证书. 本地部署关于 hexo 具体内容见 👉 链接. (这里只需要在一个文件夹中 clone hexo 就可以了) 在 hexo 项目文件夹中打开 powershell 输入 123456789101112npm install -g firebase-tools# 安装后登录, powershell 翻墙问题见文末firebase login --no-localhost# 问题选 y, 此时自动跳转到浏览器, 请求授权, 授权后复制那串认证码, 粘贴到 powershell 回车.# 成功的话会显示 Success! Logged in as xxxx@gmail.comfirebase init# 问题回答 y# 空格选中 Configure and deploy Firebase Hosting sites 回车# 选择项目# 选择文件夹( 默认的 public 就对了 )# 是否将链接都导向 /index.html, 看个人喜好选 y/n# 是否覆盖 public/index.html 回答 N 我配置好后的 firebase.json 12345678910&#123; "hosting": &#123; "public": "public", "ignore": [ "firebase.json", "**/.*", "**/node_modules/**" ] &#125;&#125; 最后执行 123456# 每次都 clean 一下hexo cleanhexo g# 此处也需要翻墙firebase deploy# 等待成功后, 在浏览器输入地址查看 powershell 翻墙 参考链接 微软文档 在 powershell 中输入 1$Profile 他会返回一个文件的路径. 根据这个路径找到这个文件, 如果没有则创建它, 中间缺失的文件夹也创建. 然后在文末添加 参考链接 中的代码, 保存, 关闭. 在 powershell 中 输入 set-proxy ‘http://127.0.0.1:1080&#39; ( 此处为 ssr/ss 的本地代理地址与端口, 按照实际情况填 ) 更多详情见 参考链接 如果遇到 “此系统上禁止运行脚本xxxxxxxxx” 则用管理员身份打开 powershell, 输入set-executionpolicy remotesigned 按须选择 y 或 a]]></content>
@@ -46,8 +59,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>python</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -114,8 +127,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>TODO</tag>
+        <tag>博客</tag>
         <tag>记录</tag>
         <tag>内网穿透</tag>
       </tags>
@@ -191,12 +204,12 @@
         <category>笔记</category>
       </categories>
       <tags>
+        <tag>TODO</tag>
         <tag>hexo</tag>
         <tag>博客</tag>
         <tag>流程图</tag>
         <tag>typora</tag>
         <tag>next</tag>
-        <tag>TODO</tag>
       </tags>
   </entry>
   <entry>
@@ -256,8 +269,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>TODO</tag>
+        <tag>博客</tag>
         <tag>记录</tag>
       </tags>
   </entry>
