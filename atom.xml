@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-05-12T08:49:31.114Z</updated>
+  <updated>2019-05-12T11:25:43.247Z</updated>
   <id>http://blog.fm7077.ml/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.fm7077.ml/2019/05/12/hello-flutter/"/>
     <id>http://blog.fm7077.ml/2019/05/12/hello-flutter/</id>
     <published>2019-05-12T08:17:40.000Z</published>
-    <updated>2019-05-12T08:49:31.114Z</updated>
+    <updated>2019-05-12T11:25:43.247Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>坑太多了</p></blockquote><a id="more"></a><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>突然抽风要试试 Flutter. 然后就一路踩着坑过来了.</p><p>系统: win10 1803</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了.</p><ol><li><p><a href="https://flutter.dev/docs/get-started/install" target="_blank" rel="noopener">Flutter 下载地址</a> 谷歌非常良心地提供了中国专用下载地址.</p></li><li><p>解压下载后的压缩包到一个不需要管理员权限地地址</p></li><li><p>进入 ~/flutter/bin 复制地址</p></li><li><p>系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 )</p><p> 打开 powershell 输入 flutter doctor 可看到检测信息</p></li><li><p>用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: <a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p><p>PUB_HOSTED_URL 值为: <a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p><p>这一步是方便国内下载库什么的</p></li><li><p>vs code 中安装 dart, flutter 这两个插件</p></li><li><p>ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化</p><p> 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器.</p></li></ol><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>Flutter 入门的坑太多了.</p><h2 id="卡在-flutter-packages-get"><a href="#卡在-flutter-packages-get" class="headerlink" title="卡在 flutter packages get"></a>卡在 flutter packages get</h2><p>这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 <a href="https://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/">博文</a> ), 然后输入 flutter packages get, 等待下完</p><h2 id="卡在-installing-build-app-outputs-apk-app-apk"><a href="#卡在-installing-build-app-outputs-apk-app-apk" class="headerlink" title="卡在 installing build\app\outputs\apk\app.apk"></a>卡在 installing build\app\outputs\apk\app.apk</h2><p>在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效.</p><p>在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按.</p><h2 id="卡在creating-flutter-project"><a href="#卡在creating-flutter-project" class="headerlink" title="卡在creating flutter project"></a>卡在creating flutter project</h2><p>这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙.</p><p>解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>坑太多了</p></blockquote><a id="more"></a><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>突然抽风要试试 Flutter. 然后就一路踩着坑过来了.</p><p>系统: win10 1803</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了.</p><ol><li><p><a href="https://flutter.dev/docs/get-started/install" target="_blank" rel="noopener">Flutter 下载地址</a> 谷歌非常良心地提供了中国专用下载地址.</p></li><li><p>解压下载后的压缩包到一个不需要管理员权限地地址</p></li><li><p>进入 ~/flutter/bin 复制地址</p></li><li><p>系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 )</p><p> 打开 powershell 输入 flutter doctor 可看到检测信息</p></li><li><p>用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: <a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p><p>PUB_HOSTED_URL 值为: <a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p><p>这一步是方便国内下载库什么的</p></li><li><p>vs code 中安装 dart, flutter 这两个插件</p></li><li><p>ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化</p><p> 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器.</p></li></ol><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>Flutter 入门的坑太多了.</p><h2 id="卡在-flutter-packages-get"><a href="#卡在-flutter-packages-get" class="headerlink" title="卡在 flutter packages get"></a>卡在 flutter packages get</h2><p>这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 <a href="https://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/">博文</a> ), 然后输入 flutter packages get, 等待下完</p><h2 id="卡在-installing-build-app-outputs-apk-app-apk"><a href="#卡在-installing-build-app-outputs-apk-app-apk" class="headerlink" title="卡在 installing build\app\outputs\apk\app.apk"></a>卡在 installing build\app\outputs\apk\app.apk</h2><p>在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效.</p><p>在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按.</p><p><em>更新</em>: 这时由于在上一个 issue 中设置了代理造成的. 关闭代理后, 在 terminal 中输入 flutter run 可看到程序正常安装运行, 同时可按 r 进行 hot reload</p><p>但按 f5 运行后还是有同样的问题, csdn 上看到这篇<a href="https://blog.csdn.net/weixin_34033624/article/details/87563259" target="_blank" rel="noopener">博文</a> 照做了一下</p><p>咦, 重启了一下 vs code 就好了, 真实神奇. 有知道原因的同学麻烦评论一下.</p><blockquote><p>其实 problems 中之前还出现了: cannot download from xxxxx(忘了地址了). 不知道跟这个有没有关系</p></blockquote><h2 id="卡在creating-flutter-project"><a href="#卡在creating-flutter-project" class="headerlink" title="卡在creating flutter project"></a>卡在creating flutter project</h2><p>这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙.</p><p>解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.</p>]]></content>
     
     <summary type="html">
     
@@ -147,9 +147,9 @@
       <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
     
     
-      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
-    
       <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
+    
+      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
     
   </entry>
   

@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[初试 Flutter]]></title>
     <url>%2F2019%2F05%2F12%2Fhello-flutter%2F</url>
-    <content type="text"><![CDATA[坑太多了 背景突然抽风要试试 Flutter. 然后就一路踩着坑过来了. 系统: win10 1803 安装由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了. Flutter 下载地址 谷歌非常良心地提供了中国专用下载地址. 解压下载后的压缩包到一个不需要管理员权限地地址 进入 ~/flutter/bin 复制地址 系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 ) 打开 powershell 输入 flutter doctor 可看到检测信息 用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: https://storage.flutter-io.cn PUB_HOSTED_URL 值为: https://pub.flutter-io.cn 这一步是方便国内下载库什么的 vs code 中安装 dart, flutter 这两个插件 ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器. 坑Flutter 入门的坑太多了. 卡在 flutter packages get这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 博文 ), 然后输入 flutter packages get, 等待下完 卡在 installing build\app\outputs\apk\app.apk在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效. 在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按. 卡在creating flutter project这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙. 解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.]]></content>
+    <content type="text"><![CDATA[坑太多了 背景突然抽风要试试 Flutter. 然后就一路踩着坑过来了. 系统: win10 1803 安装由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了. Flutter 下载地址 谷歌非常良心地提供了中国专用下载地址. 解压下载后的压缩包到一个不需要管理员权限地地址 进入 ~/flutter/bin 复制地址 系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 ) 打开 powershell 输入 flutter doctor 可看到检测信息 用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: https://storage.flutter-io.cn PUB_HOSTED_URL 值为: https://pub.flutter-io.cn 这一步是方便国内下载库什么的 vs code 中安装 dart, flutter 这两个插件 ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器. 坑Flutter 入门的坑太多了. 卡在 flutter packages get这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 博文 ), 然后输入 flutter packages get, 等待下完 卡在 installing build\app\outputs\apk\app.apk在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效. 在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按. 更新: 这时由于在上一个 issue 中设置了代理造成的. 关闭代理后, 在 terminal 中输入 flutter run 可看到程序正常安装运行, 同时可按 r 进行 hot reload 但按 f5 运行后还是有同样的问题, csdn 上看到这篇博文 照做了一下 咦, 重启了一下 vs code 就好了, 真实神奇. 有知道原因的同学麻烦评论一下. 其实 problems 中之前还出现了: cannot download from xxxxx(忘了地址了). 不知道跟这个有没有关系 卡在creating flutter project这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙. 解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.]]></content>
       <categories>
         <category>flutter</category>
       </categories>
@@ -59,8 +59,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>mysql</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
