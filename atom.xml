@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-05-12T11:25:43.247Z</updated>
+  <updated>2019-05-16T12:04:28.807Z</updated>
   <id>http://blog.fm7077.ml/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flutter 里的坑</title>
+    <link href="http://blog.fm7077.ml/2019/05/16/issues-in-flutter/"/>
+    <id>http://blog.fm7077.ml/2019/05/16/issues-in-flutter/</id>
+    <published>2019-05-16T11:59:49.000Z</published>
+    <updated>2019-05-16T12:04:28.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>flutter 虽好, 但坑也很多</p><a id="more"></a><h1 id="官方-bug"><a href="#官方-bug" class="headerlink" title="官方 bug"></a>官方 bug</h1><h2 id="在-Row-里放-TextField-出错"><a href="#在-Row-里放-TextField-出错" class="headerlink" title="在 Row 里放 TextField 出错"></a>在 Row 里放 TextField 出错</h2><blockquote><p><a href="https://github.com/flutter/flutter/issues/24724" target="_blank" rel="noopener">参考链接</a></p></blockquote><p>在官方解决这个 bug 前, 只能通过以下方式解决:</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Row(</span><br><span class="line">     children: &lt;Widget&gt;[</span><br><span class="line">         Expanded(child: TextField()),</span><br><span class="line">     ],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;flutter 虽好, 但坑也很多&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+    
+    
+      <category term="issues" scheme="http://blog.fm7077.ml/tags/issues/"/>
+    
+  </entry>
   
   <entry>
     <title>初试 Flutter</title>
@@ -36,11 +58,11 @@
       <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
     
     
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
       <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
     
       <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
-    
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
   </entry>
   
@@ -64,11 +86,11 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
     
       <category term="firebase" scheme="http://blog.fm7077.ml/tags/firebase/"/>
-    
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="翻墙" scheme="http://blog.fm7077.ml/tags/%E7%BF%BB%E5%A2%99/"/>
     
@@ -316,9 +338,9 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
-    
       <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
       <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
     
@@ -489,17 +511,17 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
-    
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="流程图" scheme="http://blog.fm7077.ml/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/"/>
     
       <category term="typora" scheme="http://blog.fm7077.ml/tags/typora/"/>
     
       <category term="next" scheme="http://blog.fm7077.ml/tags/next/"/>
+    
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
   </entry>
   
@@ -526,35 +548,6 @@
       <category term="流程图" scheme="http://blog.fm7077.ml/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/"/>
     
       <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何使用 IngressPortalBot 这个机器人</title>
-    <link href="http://blog.fm7077.ml/2018/09/04/how-to-use-IngressPortalBot/"/>
-    <id>http://blog.fm7077.ml/2018/09/04/how-to-use-IngressPortalBot/</id>
-    <published>2018-09-04T09:02:21.000Z</published>
-    <updated>2018-09-04T10:36:29.861Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="https://telegram.me/ingressportalbot" target="_blank" rel="noopener">该 bot telegram 链接</a></p><p>为了及时了解潮汕地区在哪里过了什么po, 新建了一个<a href="https://t.me/TeoSwaOPR" target="_blank" rel="noopener">频道</a> 并把这个 IngressPortalBot 放进去</p></blockquote><a id="more"></a><h1 id="新建-channel-并加入-IngressPortalBot"><a href="#新建-channel-并加入-IngressPortalBot" class="headerlink" title="新建 channel 并加入 IngressPortalBot"></a>新建 channel 并加入 IngressPortalBot</h1><p>新建 channel 这个不用说</p><p>加入 bot 到 channel 需要注意, 正确操作应该是: Manage Channel -&gt; Administrators -&gt; 搜索并添加 IngressPortalBot</p><h1 id="设置-IngressPortalBot"><a href="#设置-IngressPortalBot" class="headerlink" title="设置 IngressPortalBot"></a>设置 IngressPortalBot</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/start@IngressPortalBot</span><br></pre></td></tr></table></figure><p>未完待续…</p><hr><p>到 support 群里问了一下, 秒回啊, 开心.</p><p>原来把 bot 拉到 channel 后 help 是不一样的, 这时候只要跟着 help 所说的做就可以了</p><p>打开 help: /help, 以下是 help 内容</p><p>你可能需要<a href="https://www.google.com/maps" target="_blank" rel="noopener">谷歌地图</a>, 获取两个点的坐标, 这两个点的经纬线包围起来的区域就是你想要查找新 portal 的区域</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use commands /latmin, /latmax, /lngmin, /lngmax with coordinate. Coordinates should be intel-like. Then use /activate to activate notifications abount new portals in selected area. use /disactivate to turn notifications off. other commands works only im PM. Or use inline search. If you still didn&apos;t get, how it works - look at /longhelp.</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">简单翻译一下就是分别输入:</span><br><span class="line">/latmin 小的那个纬度</span><br><span class="line">/latmax 大的那个纬度</span><br><span class="line">/lngmin 小的那个经度</span><br><span class="line">/lngmax 大的那个经度</span><br><span class="line"></span><br><span class="line">最后输入 /activate 就可以让 bot 搜索到新 portal 后自动发信息啦</span><br><span class="line"></span><br><span class="line">ps: 检查设置好的经纬度: /settings@Ingressportalbot</span><br><span class="line"></span><br><span class="line">ps+: 我设置的潮汕地区的经纬度:</span><br><span class="line">Notify activated for box:</span><br><span class="line">Lat: From 22.944696 to 22.944696</span><br><span class="line">Lng: From 116.424658 to 117.044116</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://telegram.me/ingressportalbot&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;该 bot telegram 链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;为了及时了解潮汕地区在哪里过了什么po, 新建了一个&lt;a href=&quot;https://t.me/TeoSwaOPR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;频道&lt;/a&gt; 并把这个 IngressPortalBot 放进去&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="ingress" scheme="http://blog.fm7077.ml/categories/ingress/"/>
-    
-    
-      <category term="ingress" scheme="http://blog.fm7077.ml/tags/ingress/"/>
-    
-      <category term="bot" scheme="http://blog.fm7077.ml/tags/bot/"/>
-    
-      <category term="telegram" scheme="http://blog.fm7077.ml/tags/telegram/"/>
     
   </entry>
   
