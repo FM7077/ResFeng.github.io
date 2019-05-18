@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-05-16T12:35:20.642Z</updated>
+  <updated>2019-05-18T12:19:58.569Z</updated>
   <id>http://blog.fm7077.ml/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flutter 简易登录窗口</title>
+    <link href="http://blog.fm7077.ml/2019/05/18/flutter-simple-log-in-window/"/>
+    <id>http://blog.fm7077.ml/2019/05/18/flutter-simple-log-in-window/</id>
+    <published>2019-05-18T11:51:20.000Z</published>
+    <updated>2019-05-18T12:19:58.569Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式</p><p>文章主要列出比较关键的点</p><p><a href="https://github.com/ResFeng/flutter_simple_log_in_window" target="_blank" rel="noopener">github</a></p></blockquote><a id="more"></a><h1 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件:"></a>主要组件:</h1><ol><li>Row: 横向排列组件</li><li>TextField: 文本框</li><li>GestureDetector: 为文本添加事件</li><li>Text: 文本</li><li>FlatButton: 按钮</li></ol><p>以上都可以通过 google: Flutter + 组件名 查询到对应的文档</p><h1 id="home-指定"><a href="#home-指定" class="headerlink" title="home 指定"></a>home 指定</h1><p>dart 通过 main.dart 中的 runApp() 函数来指定程序入口, 在入口类里通过设置 home 属性确定入口页面.</p><p>当页面指定为其他 dart 文件中的类时, 需要在 main 中 import 该 dart 文件.</p><h1 id="主要的几个点"><a href="#主要的几个点" class="headerlink" title="主要的几个点"></a>主要的几个点</h1><h2 id="获取-TextField-的值"><a href="#获取-TextField-的值" class="headerlink" title="获取 TextField 的值"></a>获取 TextField 的值</h2><ol><li>设置一个 key: final  _key = TextEditingController();</li><li>在 TextField 中添加属性: controller: _key,</li><li>在别的组件的事件中使用: _key.text</li></ol><h2 id="为-Text-添加点击事件"><a href="#为-Text-添加点击事件" class="headerlink" title="为 Text 添加点击事件"></a>为 Text 添加点击事件</h2><p>由于 dart 并没有给 Text 直接添加点击事件的属性, 因此需要借助 GestureDetector, 在 GestureDetector 中嵌套 Text, 同时为 GestureDector 添加点击事件.</p><h2 id="为密码输入框添加-可见-不可见-按钮"><a href="#为密码输入框添加-可见-不可见-按钮" class="headerlink" title="为密码输入框添加 可见/不可见 按钮"></a>为密码输入框添加 可见/不可见 按钮</h2><ol><li>定义一个 bool 参数: bool passwordVisible = false;</li><li>密码 TextField 中添加属性: </li></ol><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">suffixIcon: IconButton(</span><br><span class="line">    icon: Icon(</span><br><span class="line">        passwordVisible ? Icons.visibility : Icons.visibility_off,</span><br><span class="line">        color: passwordVisible ? Colors.blue : Colors.grey,</span><br><span class="line">    ),</span><br><span class="line">    onPressed: ()&#123;</span><br><span class="line">        setState(() &#123;</span><br><span class="line">            passwordVisible = !passwordVisible; </span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">),</span><br></pre></td></tr></table></figure><h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul><li style="list-style: none"><input type="checkbox"> 添加背景</li><li style="list-style: none"><input type="checkbox"> 添加方框并美化</li><li style="list-style: none"><input type="checkbox"> 其他</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式&lt;/p&gt;
+&lt;p&gt;文章主要列出比较关键的点&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ResFeng/flutter_simple_log_in_window&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+    
+    
+      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
+    
+      <category term="demo" scheme="http://blog.fm7077.ml/tags/demo/"/>
+    
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
+  </entry>
   
   <entry>
     <title>Flutter 里的坑</title>
@@ -58,11 +88,11 @@
       <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
     
     
+      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
+    
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
       <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
-    
-      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
     
   </entry>
   
@@ -169,9 +199,9 @@
       <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
     
     
-      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
-    
       <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
+    
+      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
     
   </entry>
   
@@ -338,9 +368,9 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
     
@@ -511,6 +541,8 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
     
       <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
@@ -520,34 +552,6 @@
       <category term="typora" scheme="http://blog.fm7077.ml/tags/typora/"/>
     
       <category term="next" scheme="http://blog.fm7077.ml/tags/next/"/>
-    
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序登录流程控制</title>
-    <link href="http://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/"/>
-    <id>http://blog.fm7077.ml/2018/09/04/login-control-in-wechat-small-app/</id>
-    <published>2018-09-04T15:36:48.000Z</published>
-    <updated>2019-04-17T04:05:46.215Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的</p></blockquote><a id="more"></a><p>需求及背景:</p><ol><li><p>任何用户都能注册, 但只有认定了的用户才能登录进行核心功能使用</p></li><li><p>后台有关于用户的唯一 id( 非 unionId 或 openId )</p></li><li><p>没有密码( 这个功能的添加和上面的需求不冲突 )</p></li></ol><pre class="mermaid">graph TBa[用户进入]-->|初次|b[登记页面]    b-->c(等待确认页面)a-->|二次|d{本地是否存有id}    d-->|是|e(选购页面)    d-->|否|f{是否已登记}        f-->|是|g{是否已确认}            g-->|是|e            g-->|是|h[存入id]            g-->|否|c        f-->|否|b</pre><p>注: 判断是否初次进入是根据用户授权情况的, 而不是用户是否第一次打开小程序</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;控制好页面流向, 引导用户按照既定路线使用小程序对于小程序是非常重要的&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="流程图" scheme="http://blog.fm7077.ml/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/"/>
-    
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
