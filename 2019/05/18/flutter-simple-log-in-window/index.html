@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="一颗牛肉丸的回忆">
 <meta property="og:description" content="通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式 文章主要列出比较关键的点 github">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-19T08:50:12.904Z">
+<meta property="og:updated_time" content="2019-05-20T09:58:49.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flutter 简易登录窗口">
 <meta name="twitter:description" content="通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式 文章主要列出比较关键的点 github">
@@ -340,8 +340,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2019-05-19T16:50:12+08:00" content="2019-05-19">
-              2019-05-19
+            <time itemprop="dateUpdated" datetime="2019-05-20T17:58:49+08:00" content="2019-05-20">
+              2019-05-20
             </time>
           </span>
         
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  619
+                  772
                 </span>
               
 
@@ -481,9 +481,22 @@
  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">suffixIcon: IconButton(</span><br><span class="line">    icon: Icon(</span><br><span class="line">        passwordVisible ? Icons.visibility : Icons.visibility_off,</span><br><span class="line">        color: passwordVisible ? Colors.blue : Colors.grey,</span><br><span class="line">    ),</span><br><span class="line">    onPressed: ()&#123;</span><br><span class="line">        setState(() &#123;</span><br><span class="line">            passwordVisible = !passwordVisible; </span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h2 id="登录等待界面"><a href="#登录等待界面" class="headerlink" title="登录等待界面"></a>登录等待界面</h2><p>在点击登录后应该会有一个转圈圈等待界面的, 增强交互感.</p>
+<ol>
+<li><p>设置 flag: bool _showLoading = false;</p>
+</li>
+<li><p>用一个 List 来存放主界面( 手机号, 密码输入框, 忘记密码, 登录按钮 ), 和根据 flag 来决定是否加入 loading 界面. </p>
+<p> 详见: login_page.dart: _logInWindow().</p>
+</li>
+<li><p>点击登录后判断是否符合登录条件, 是的话就通过 setState() 设置 _showLoading = true;</p>
+</li>
+</ol>
+<h2 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h2><p><a href="https://dart.dev/tutorials/language/futures" target="_blank" rel="noopener">官方文档</a></p>
+<p>登录的时候一方面向服务器发起请求, 另一方面维持 loading 状态, 等待服务器响应. </p>
+<p>详见 login_page.dart: _logInProcess()</p>
 <h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul>
-<li style="list-style: none"><input type="checkbox"> 添加背景</li>
-<li style="list-style: none"><input type="checkbox"> 添加方框并美化</li>
+<li style="list-style: none"><input type="checkbox" checked> 添加背景</li>
+<li style="list-style: none"><input type="checkbox" checked> 添加方框并美化</li>
 </ul>
 
       
@@ -685,12 +698,6 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://weibo.com/u/2009070873" target="_blank" title="weibo">
-                      
-                        <i class="fa fa-fw fa-weibo"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
                     <a href="https://500px.com/feng-px" target="_blank" title="500px">
                       
                         <i class="fa fa-fw fa-500px"></i></a>
@@ -734,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要组件"><span class="nav-number">1.</span> <span class="nav-text">主要组件:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#home-指定"><span class="nav-number">2.</span> <span class="nav-text">home 指定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要的几个点"><span class="nav-number">3.</span> <span class="nav-text">主要的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-TextField-的值"><span class="nav-number">3.1.</span> <span class="nav-text">获取 TextField 的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为-Text-添加点击事件"><span class="nav-number">3.2.</span> <span class="nav-text">为 Text 添加点击事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录时判断电话-密码是否为空-并根据判断设置-errorText"><span class="nav-number">3.3.</span> <span class="nav-text">登录时判断电话 / 密码是否为空, 并根据判断设置 errorText</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextField-获取焦点"><span class="nav-number">3.4.</span> <span class="nav-text">TextField 获取焦点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为密码输入框添加-可见-不可见-按钮"><span class="nav-number">3.5.</span> <span class="nav-text">为密码输入框添加 可见/不可见 按钮</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">4.</span> <span class="nav-text">TODO</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要组件"><span class="nav-number">1.</span> <span class="nav-text">主要组件:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#home-指定"><span class="nav-number">2.</span> <span class="nav-text">home 指定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要的几个点"><span class="nav-number">3.</span> <span class="nav-text">主要的几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-TextField-的值"><span class="nav-number">3.1.</span> <span class="nav-text">获取 TextField 的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为-Text-添加点击事件"><span class="nav-number">3.2.</span> <span class="nav-text">为 Text 添加点击事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录时判断电话-密码是否为空-并根据判断设置-errorText"><span class="nav-number">3.3.</span> <span class="nav-text">登录时判断电话 / 密码是否为空, 并根据判断设置 errorText</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextField-获取焦点"><span class="nav-number">3.4.</span> <span class="nav-text">TextField 获取焦点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为密码输入框添加-可见-不可见-按钮"><span class="nav-number">3.5.</span> <span class="nav-text">为密码输入框添加 可见/不可见 按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录等待界面"><span class="nav-number">3.6.</span> <span class="nav-text">登录等待界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步处理"><span class="nav-number">3.7.</span> <span class="nav-text">异步处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">4.</span> <span class="nav-text">TODO</span></a></li></ol></div>
             
 
           </div>
@@ -769,7 +776,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13k</span>
+    <span title="Site words total count">13.3k</span>
   
   
   <span>

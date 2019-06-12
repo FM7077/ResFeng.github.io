@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[flutter 简易登录窗口]]></title>
     <url>%2F2019%2F05%2F18%2Fflutter-simple-log-in-window%2F</url>
-    <content type="text"><![CDATA[通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式 文章主要列出比较关键的点 github 主要组件: Row: 横向排列组件 TextField: 文本框 GestureDetector: 为文本添加事件 Text: 文本 FlatButton: 按钮 以上都可以通过 google: Flutter + 组件名 查询到对应的文档 home 指定dart 通过 main.dart 中的 runApp() 函数来指定程序入口, 在入口类里通过设置 home 属性确定入口页面. 当页面指定为其他 dart 文件中的类时, 需要在 main 中 import 该 dart 文件. 主要的几个点获取 TextField 的值 设置一个 key: final _key = TextEditingController(); 在 TextField 中添加属性: controller: _key, 在别的组件的事件中使用: _key.text 为 Text 添加点击事件由于 dart 并没有给 Text 直接添加点击事件的属性, 因此需要借助 GestureDetector, 在 GestureDetector 中嵌套 Text, 同时为 GestureDector 添加点击事件. 登录时判断电话 / 密码是否为空, 并根据判断设置 errorText这里直接通过 获取 TextField 的值 判断值是否为空: _key.text.isEmpty errorText: 使 TextField 显示错误提示文字( 默认为红色, 位于输入框下方 ). 当使用该属性时, labelText 也会变色( 跟随默认色 ). errorText 设置值为 null 时不起作用. 设置 flag: _isPhoneEmpty = false; 设置 errorText: errorText: _isPhoneEmpty? “手机号为空” : null, 为登录按钮添加事件: 12345onTap:()&#123; setState(()&#123; _keyPhone.text.isEmpty? _isPhoneEmpty = true : _isPhoneEmpty = false; &#125;)&#125; 根据提示( 鼠标移过去 )说明, 该函数可以向框架声明某一对象的属性已被修改, 从而使该属性做出相应动作. 具体等看文档 TextField 获取焦点 设置 FocusNode _passwordFocusNode = FocusNode(); 为密码设置 focusNode: focus Node: _passwordFocusNode 为 phone 设置完成事件: 123onEditingComplete: ()&#123; FocusScope.of(context).requestFocus(_passwordFocusNode);&#125;, 为 phone 设置回车按钮样式: textInputAction: TextInputAction.next ( 这一步只是为了好看 ) 这样当输完号码后, 点击回车就自动跳转到密码输入框了. 密码输入框用类似的方法实现, 回车 -&gt; 登录. 根据提示说明, FocusNode 是焦点树的叶, 可以获取到焦点( 英文原文: A leaf node in the focus tree that can receive focus. ). 为密码输入框添加 可见/不可见 按钮 定义一个 bool 参数: bool passwordVisible = false; 密码 TextField 中添加属性: 1234567891011suffixIcon: IconButton( icon: Icon( passwordVisible ? Icons.visibility : Icons.visibility_off, color: passwordVisible ? Colors.blue : Colors.grey, ), onPressed: ()&#123; setState(() &#123; passwordVisible = !passwordVisible; &#125;); &#125;,), TODO 添加背景 添加方框并美化]]></content>
+    <content type="text"><![CDATA[通过这个界面熟悉熟悉 dart 语言, flutter 界面布局方式 文章主要列出比较关键的点 github 主要组件: Row: 横向排列组件 TextField: 文本框 GestureDetector: 为文本添加事件 Text: 文本 FlatButton: 按钮 以上都可以通过 google: Flutter + 组件名 查询到对应的文档 home 指定dart 通过 main.dart 中的 runApp() 函数来指定程序入口, 在入口类里通过设置 home 属性确定入口页面. 当页面指定为其他 dart 文件中的类时, 需要在 main 中 import 该 dart 文件. 主要的几个点获取 TextField 的值 设置一个 key: final _key = TextEditingController(); 在 TextField 中添加属性: controller: _key, 在别的组件的事件中使用: _key.text 为 Text 添加点击事件由于 dart 并没有给 Text 直接添加点击事件的属性, 因此需要借助 GestureDetector, 在 GestureDetector 中嵌套 Text, 同时为 GestureDector 添加点击事件. 登录时判断电话 / 密码是否为空, 并根据判断设置 errorText这里直接通过 获取 TextField 的值 判断值是否为空: _key.text.isEmpty errorText: 使 TextField 显示错误提示文字( 默认为红色, 位于输入框下方 ). 当使用该属性时, labelText 也会变色( 跟随默认色 ). errorText 设置值为 null 时不起作用. 设置 flag: _isPhoneEmpty = false; 设置 errorText: errorText: _isPhoneEmpty? “手机号为空” : null, 为登录按钮添加事件: 12345onTap:()&#123; setState(()&#123; _keyPhone.text.isEmpty? _isPhoneEmpty = true : _isPhoneEmpty = false; &#125;)&#125; 根据提示( 鼠标移过去 )说明, 该函数可以向框架声明某一对象的属性已被修改, 从而使该属性做出相应动作. 具体等看文档 TextField 获取焦点 设置 FocusNode _passwordFocusNode = FocusNode(); 为密码设置 focusNode: focus Node: _passwordFocusNode 为 phone 设置完成事件: 123onEditingComplete: ()&#123; FocusScope.of(context).requestFocus(_passwordFocusNode);&#125;, 为 phone 设置回车按钮样式: textInputAction: TextInputAction.next ( 这一步只是为了好看 ) 这样当输完号码后, 点击回车就自动跳转到密码输入框了. 密码输入框用类似的方法实现, 回车 -&gt; 登录. 根据提示说明, FocusNode 是焦点树的叶, 可以获取到焦点( 英文原文: A leaf node in the focus tree that can receive focus. ). 为密码输入框添加 可见/不可见 按钮 定义一个 bool 参数: bool passwordVisible = false; 密码 TextField 中添加属性: 1234567891011suffixIcon: IconButton( icon: Icon( passwordVisible ? Icons.visibility : Icons.visibility_off, color: passwordVisible ? Colors.blue : Colors.grey, ), onPressed: ()&#123; setState(() &#123; passwordVisible = !passwordVisible; &#125;); &#125;,), 登录等待界面在点击登录后应该会有一个转圈圈等待界面的, 增强交互感. 设置 flag: bool _showLoading = false; 用一个 List 来存放主界面( 手机号, 密码输入框, 忘记密码, 登录按钮 ), 和根据 flag 来决定是否加入 loading 界面. 详见: login_page.dart: _logInWindow(). 点击登录后判断是否符合登录条件, 是的话就通过 setState() 设置 _showLoading = true; 异步处理官方文档 登录的时候一方面向服务器发起请求, 另一方面维持 loading 状态, 等待服务器响应. 详见 login_page.dart: _logInProcess() TODO 添加背景 添加方框并美化]]></content>
       <categories>
         <category>flutter</category>
       </categories>
@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[Flutter 里的坑]]></title>
     <url>%2F2019%2F05%2F16%2Fissues-in-flutter%2F</url>
-    <content type="text"><![CDATA[flutter 虽好, 但坑也很多 官方 bug在 Row 里放 TextField 出错 参考链接 在官方解决这个 bug 前, 只能通过以下方式解决: 12345Row( children: &lt;Widget&gt;[ Expanded(child: TextField()), ],) 这时如果在这个 TextField 前还有其他组件会发现其他组件被挤在了一边. 因为 Expanded 会自动填充 Row 所有剩余空间. 解决方法是把其他组件分别放在 Container 中, 并给 Container 设置宽度, 提前占据一定空间. 从这里可以大概看到为什么放 TextField 会出 bug 了. 1234567Container( width: 60, child: new Text( 'unit', style: _biggerFont, ),),]]></content>
+    <content type="text"><![CDATA[flutter 虽好, 但坑也很多 官方 bug在 Row 里放 TextField 出错 参考链接 在官方解决这个 bug 前, 只能通过以下方式解决: 12345Row( children: &lt;Widget&gt;[ Expanded(child: TextField()), ],) 这时如果在这个 TextField 前还有其他组件会发现其他组件被挤在了一边. 因为 Expanded 会自动填充 Row 所有剩余空间. 解决方法是把其他组件分别放在 Container 中, 并给 Container 设置宽度, 提前占据一定空间. 从这里可以大概看到为什么放 TextField 会出 bug 了. 1234567Container( width: 60, child: new Text( 'unit', style: _biggerFont, ),), 坑引用图片 官方文档 要给程序插上背景图片, 网上找了教程基本都是写: 123456decoration: BoxDecoration( image: DecorationImage( image: AssetImage("img/~.jpg"), fit: BoxFit.cover, )), 但基本都没提到要在 pubspec.yaml 中引入这些图片, 在 github 看了别人的回答才知道又踩坑了~~ 如果你的图片项目根目录中则在 pubspec.yaml 添加一下内容: 123flutter assets: - img/ 这里好像热重启不起效, 挺烦的. 还有大家好像更习惯 images ?]]></content>
       <categories>
         <category>flutter</category>
       </categories>
@@ -45,9 +45,9 @@
         <category>笔记</category>
       </categories>
       <tags>
+        <tag>博客</tag>
         <tag>hexo</tag>
         <tag>firebase</tag>
-        <tag>博客</tag>
         <tag>翻墙</tag>
       </tags>
   </entry>
@@ -229,8 +229,8 @@
       </categories>
       <tags>
         <tag>TODO</tag>
-        <tag>hexo</tag>
         <tag>博客</tag>
+        <tag>hexo</tag>
         <tag>流程图</tag>
         <tag>typora</tag>
         <tag>next</tag>
