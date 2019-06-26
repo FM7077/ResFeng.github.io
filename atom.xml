@@ -116,11 +116,11 @@
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
     
       <category term="firebase" scheme="http://blog.fm7077.ml/tags/firebase/"/>
+    
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="翻墙" scheme="http://blog.fm7077.ml/tags/%E7%BF%BB%E5%A2%99/"/>
     
@@ -199,9 +199,9 @@
       <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
     
     
-      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
-    
       <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
+    
+      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
     
   </entry>
   
@@ -543,9 +543,9 @@
     
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="流程图" scheme="http://blog.fm7077.ml/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/"/>
     
