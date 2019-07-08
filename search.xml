@@ -45,9 +45,9 @@
         <category>笔记</category>
       </categories>
       <tags>
+        <tag>博客</tag>
         <tag>hexo</tag>
         <tag>firebase</tag>
-        <tag>博客</tag>
         <tag>翻墙</tag>
       </tags>
   </entry>
@@ -229,8 +229,8 @@
       </categories>
       <tags>
         <tag>TODO</tag>
-        <tag>hexo</tag>
         <tag>博客</tag>
+        <tag>hexo</tag>
         <tag>流程图</tag>
         <tag>typora</tag>
         <tag>next</tag>
