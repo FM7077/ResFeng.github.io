@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-07-08T03:34:11.874Z</updated>
+  <updated>2019-07-11T00:52:31.796Z</updated>
   <id>http://blog.fm7077.ml/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.fm7077.ml/2019/07/08/prepare-for-pocket-book/"/>
     <id>http://blog.fm7077.ml/2019/07/08/prepare-for-pocket-book/</id>
     <published>2019-07-08T03:14:02.000Z</published>
-    <updated>2019-07-08T03:34:11.874Z</updated>
+    <updated>2019-07-11T00:52:31.796Z</updated>
     
-    <content type="html"><![CDATA[<p>关于记账本 app 的一些想法和准备工作</p><a id="more"></a><h1 id="设想"><a href="#设想" class="headerlink" title="设想"></a>设想</h1><h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1>]]></content>
+    <content type="html"><![CDATA[<p>关于记账本 app 的一些想法和准备工作</p><a id="more"></a><h1 id="设想"><a href="#设想" class="headerlink" title="设想"></a>设想</h1><p>一个最基本功能是记流水账, 附加功能是小金库记录功能的记账本.</p><p>小金库即各种基础现金源, 包括现金, 银行卡, 储蓄账户等, 不包括电话卡, 公交卡等.</p><p>流水账包括出和入的, 每一笔都需要人工录入, 目前设想参数:</p><table><thead><tr><th>参数</th><th>功能 / 备注</th></tr></thead><tbody><tr><td>id</td><td>id</td></tr><tr><td>现金源id</td><td>完成这笔流水的现金源</td></tr><tr><td>金额</td><td>通过正负分辨进出</td></tr><tr><td>备注</td><td>备注</td></tr><tr><td>时间</td></tr></tbody></table><p>现金源流水:</p><blockquote><p>每次产生流水都会自动生成现金源流水, 现金源流水在查看现金源资金情况的时候展示</p></blockquote><table><thead><tr><th>参数</th><th>功能 / 备注</th></tr></thead><tbody><tr><td>id</td><td>id</td></tr><tr><td>现金源id</td><td>现金源id</td></tr><tr><td>金额</td><td>通过正负分辨进出</td></tr><tr><td>对应流水id</td><td></td></tr><tr><td>备注</td><td>备注</td></tr><tr><td>时间</td></tr></tbody></table><h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><ol><li>流水账记录 CRUD</li><li>现金源记录 CRUD</li><li>流水折线图</li><li>数据导出 csv</li></ol><h1 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h1><h2 id="现金源之间的转账如果涉及到手续费如何记录"><a href="#现金源之间的转账如果涉及到手续费如何记录" class="headerlink" title="现金源之间的转账如果涉及到手续费如何记录:"></a>现金源之间的转账如果涉及到手续费如何记录:</h2><p>为现金源之间的转账设立专门的入口, 用户手动选择两个现金源, 填写转账金额, 手续费, 确认后提交两条流水, 现金源为转出的现金源, 金额为手续费, 备注为”现金源1转账xx金额至现金源2”. 同时分别为现金源1, 2生成两条流水. 然后再从现金源1中减去转账金额和手续费, 现金源2中增加转账金额.</p><h2 id="若用户修改现金源金额如何记录"><a href="#若用户修改现金源金额如何记录" class="headerlink" title="若用户修改现金源金额如何记录:"></a>若用户修改现金源金额如何记录:</h2><p>直接记录流水, 自动生成金额, 备注为”用户修改”</p>]]></content>
     
     <summary type="html">
     
@@ -33,6 +33,8 @@
     
       <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
     
       <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
     
@@ -62,9 +64,9 @@
     
       <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
     
-      <category term="demo" scheme="http://blog.fm7077.ml/tags/demo/"/>
-    
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+    
+      <category term="demo" scheme="http://blog.fm7077.ml/tags/demo/"/>
     
   </entry>
   
@@ -110,11 +112,11 @@
       <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
     
     
+      <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
+    
       <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
     
       <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
-    
-      <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
     
   </entry>
   
