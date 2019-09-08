@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="https://blog.fm7077.ml/atom.xml" title="一颗牛肉丸的回忆" type="application/atom+xml" />
+  <link rel="alternate" href="https://blog.fm7077.ml/atom.xml" title="一颗牛肉丸" type="application/atom+xml" />
 
 
 
@@ -85,8 +85,8 @@
 <meta name="keywords" content="hexo,firebase,博客,翻墙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 firebase 上部署 hexo 静态博客">
-<meta property="og:url" content="http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/index.html">
-<meta property="og:site_name" content="一颗牛肉丸的回忆">
+<meta property="og:url" content="http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/index.html">
+<meta property="og:site_name" content="一颗牛肉丸">
 <meta property="og:description" content="firebase 是股沟的一个 app 和 web 应用程序开发平台, 可以在上面部署静态博客. 本文主要 参考链接 参考链接里有些东西">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-30T06:55:07.390Z">
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/"/>
 
 
 
 
 
-  <title>在 firebase 上部署 hexo 静态博客 | 一颗牛肉丸的回忆</title>
+  <title>在 firebase 上部署 hexo 静态博客 | 一颗牛肉丸</title>
   
 
 
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">一颗牛肉丸的回忆</span>
+        <span class="site-title">一颗牛肉丸</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="牛肉丸">
@@ -308,7 +308,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="name" content="一颗牛肉丸">
     </span>
 
     
@@ -451,7 +451,7 @@
 <li><p>坐等谷歌部署证书.</p>
 </li>
 </ol>
-<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>关于 hexo 具体内容见 👉 <a href="https://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/">链接</a>. (这里只需要在一个文件夹中 clone hexo 就可以了)</p>
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>关于 hexo 具体内容见 👉 <a href="https://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/" target="_blank" rel="noopener">链接</a>. (这里只需要在一个文件夹中 clone hexo 就可以了)</p>
 <p>在 hexo 项目文件夹中打开 powershell 输入</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install -g firebase-tools</span><br><span class="line"><span class="comment"># 安装后登录, powershell 翻墙问题见文末</span></span><br><span class="line">firebase login --no-localhost</span><br><span class="line"><span class="comment"># 问题选 y, 此时自动跳转到浏览器, 请求授权, 授权后复制那串认证码, 粘贴到 powershell 回车.</span></span><br><span class="line"><span class="comment"># 成功的话会显示 Success! Logged in as xxxx@gmail.com</span></span><br><span class="line">firebase init</span><br><span class="line"><span class="comment"># 问题回答 y</span></span><br><span class="line"><span class="comment"># 空格选中 Configure and deploy Firebase Hosting sites 回车</span></span><br><span class="line"><span class="comment"># 选择项目</span></span><br><span class="line"><span class="comment"># 选择文件夹( 默认的 public 就对了 )</span></span><br><span class="line"><span class="comment"># 是否将链接都导向 /index.html, 看个人喜好选 y/n</span></span><br><span class="line"><span class="comment"># 是否覆盖 public/index.html 回答 N</span></span><br></pre></td></tr></table></figure>
 <p>我配置好后的 firebase.json</p>
@@ -754,7 +754,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">13.8k</span>
   
   
   <span>
@@ -920,7 +920,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/';
+          this.page.url = 'http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/';
           this.page.identifier = '2019/04/30/hexo-deploy-on-firebase/';
           this.page.title = '在 firebase 上部署 hexo 静态博客';
         };

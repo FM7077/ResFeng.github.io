@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[biocard 收集 app]]></title>
     <url>%2F2019%2F08%2F09%2Fprepare-for-biocard-collector%2F</url>
-    <content type="text"><![CDATA[biocard 电子册. 新坑+1 数据库很简单, 一个 agent 表, 一个 biocard 表就完事了]]></content>
+    <content type="text"><![CDATA[biocard 电子册. 新坑+1 数据库很简单, 一个 agent 表, 一个 biocard 表就完事了 数据库agent 表 column name type remark id int agentName verchar faction int Res/Enl/Ofc createdTime datetime biocard 表由于特工们是可以改名换阵营的，所以需要再这个表中体现出他制作该 biocard 时的信息 column name type remark id int agentId int agentName verchar faction int]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -332,9 +332,9 @@
       <tags>
         <tag>微信小程序</tag>
         <tag>web服务器</tag>
-        <tag>java</tag>
         <tag>加密</tag>
         <tag>解密</tag>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>

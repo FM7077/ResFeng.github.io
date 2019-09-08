@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="https://blog.fm7077.ml/atom.xml" title="一颗牛肉丸的回忆" type="application/atom+xml" />
+  <link rel="alternate" href="https://blog.fm7077.ml/atom.xml" title="一颗牛肉丸" type="application/atom+xml" />
 
 
 
@@ -85,11 +85,11 @@
 <meta name="keywords" content="TODO,ingress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="biocard 收集 app">
-<meta property="og:url" content="http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/index.html">
-<meta property="og:site_name" content="一颗牛肉丸的回忆">
+<meta property="og:url" content="http://yoursite.com/2019/08/09/prepare-for-biocard-collector/index.html">
+<meta property="og:site_name" content="一颗牛肉丸">
 <meta property="og:description" content="biocard 电子册. 新坑+1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-09T15:08:14.503Z">
+<meta property="og:updated_time" content="2019-08-10T00:56:09.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="biocard 收集 app">
 <meta name="twitter:description" content="biocard 电子册. 新坑+1">
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/09/prepare-for-biocard-collector/"/>
 
 
 
 
 
-  <title>biocard 收集 app | 一颗牛肉丸的回忆</title>
+  <title>biocard 收集 app | 一颗牛肉丸</title>
   
 
 
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">一颗牛肉丸的回忆</span>
+        <span class="site-title">一颗牛肉丸</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/prepare-for-biocard-collector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="牛肉丸">
@@ -308,7 +308,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一颗牛肉丸的回忆">
+      <meta itemprop="name" content="一颗牛肉丸">
     </span>
 
     
@@ -340,8 +340,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-            <time itemprop="dateUpdated" datetime="2019-08-09T23:08:14+08:00" content="2019-08-09">
-              2019-08-09
+            <time itemprop="dateUpdated" datetime="2019-08-10T08:56:09+08:00" content="2019-08-10">
+              2019-08-10
             </time>
           </span>
         
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  25
+                  94
                 </span>
               
 
@@ -429,6 +429,67 @@
         <p>biocard 电子册. 新坑+1</p>
 <a id="more"></a>
 <p>数据库很简单, 一个 agent 表, 一个 biocard 表就完事了</p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="agent-表"><a href="#agent-表" class="headerlink" title="agent 表"></a>agent 表</h2><table>
+<thead>
+<tr>
+<th>column name</th>
+<th>type</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td>agentName</td>
+<td>verchar</td>
+<td></td>
+</tr>
+<tr>
+<td>faction</td>
+<td>int</td>
+<td>Res/Enl/Ofc</td>
+</tr>
+<tr>
+<td>createdTime</td>
+<td>datetime</td>
+</tr>
+</tbody>
+</table>
+<h2 id="biocard-表"><a href="#biocard-表" class="headerlink" title="biocard 表"></a>biocard 表</h2><p>由于特工们是可以改名换阵营的，所以需要再这个表中体现出他制作该 biocard 时的信息</p>
+<table>
+<thead>
+<tr>
+<th>column name</th>
+<th>type</th>
+<th>remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td>agentId</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td>agentName</td>
+<td>verchar</td>
+<td></td>
+</tr>
+<tr>
+<td>faction</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -549,8 +610,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -652,6 +722,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#agent-表"><span class="nav-number">1.1.</span> <span class="nav-text">agent 表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#biocard-表"><span class="nav-number">1.2.</span> <span class="nav-text">biocard 表</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -680,7 +766,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">13.8k</span>
   
   
   <span>
@@ -846,7 +932,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/';
+          this.page.url = 'http://yoursite.com/2019/08/09/prepare-for-biocard-collector/';
           this.page.identifier = '2019/08/09/prepare-for-biocard-collector/';
           this.page.title = 'biocard 收集 app';
         };

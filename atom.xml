@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>一颗牛肉丸的回忆</title>
+  <title>一颗牛肉丸</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.fm7077.ml/"/>
-  <updated>2019-08-09T15:08:14.503Z</updated>
-  <id>http://blog.fm7077.ml/</id>
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-10T00:56:09.309Z</updated>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>牛肉丸</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>biocard 收集 app</title>
-    <link href="http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/"/>
-    <id>http://blog.fm7077.ml/2019/08/09/prepare-for-biocard-collector/</id>
+    <link href="http://yoursite.com/2019/08/09/prepare-for-biocard-collector/"/>
+    <id>http://yoursite.com/2019/08/09/prepare-for-biocard-collector/</id>
     <published>2019-08-09T13:46:37.000Z</published>
-    <updated>2019-08-09T15:08:14.503Z</updated>
+    <updated>2019-08-10T00:56:09.309Z</updated>
     
-    <content type="html"><![CDATA[<p>biocard 电子册. 新坑+1</p><a id="more"></a><p>数据库很简单, 一个 agent 表, 一个 biocard 表就完事了</p>]]></content>
+    <content type="html"><![CDATA[<p>biocard 电子册. 新坑+1</p><a id="more"></a><p>数据库很简单, 一个 agent 表, 一个 biocard 表就完事了</p><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="agent-表"><a href="#agent-表" class="headerlink" title="agent 表"></a>agent 表</h2><table><thead><tr><th>column name</th><th>type</th><th>remark</th></tr></thead><tbody><tr><td>id</td><td>int</td><td></td></tr><tr><td>agentName</td><td>verchar</td><td></td></tr><tr><td>faction</td><td>int</td><td>Res/Enl/Ofc</td></tr><tr><td>createdTime</td><td>datetime</td></tr></tbody></table><h2 id="biocard-表"><a href="#biocard-表" class="headerlink" title="biocard 表"></a>biocard 表</h2><p>由于特工们是可以改名换阵营的，所以需要再这个表中体现出他制作该 biocard 时的信息</p><table><thead><tr><th>column name</th><th>type</th><th>remark</th></tr></thead><tbody><tr><td>id</td><td>int</td><td></td></tr><tr><td>agentId</td><td>int</td><td></td></tr><tr><td>agentName</td><td>verchar</td><td></td></tr><tr><td>faction</td><td>int</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="TODO" scheme="http://yoursite.com/tags/TODO/"/>
     
-      <category term="ingress" scheme="http://blog.fm7077.ml/tags/ingress/"/>
+      <category term="ingress" scheme="http://yoursite.com/tags/ingress/"/>
     
   </entry>
   
   <entry>
     <title>记账本准备工作</title>
-    <link href="http://blog.fm7077.ml/2019/07/08/prepare-for-pocket-book/"/>
-    <id>http://blog.fm7077.ml/2019/07/08/prepare-for-pocket-book/</id>
+    <link href="http://yoursite.com/2019/07/08/prepare-for-pocket-book/"/>
+    <id>http://yoursite.com/2019/07/08/prepare-for-pocket-book/</id>
     <published>2019-07-08T03:14:02.000Z</published>
     <updated>2019-08-09T13:31:14.599Z</updated>
     
@@ -57,19 +57,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="TODO" scheme="http://yoursite.com/tags/TODO/"/>
     
-      <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>flutter 简易登录窗口</title>
-    <link href="http://blog.fm7077.ml/2019/05/18/flutter-simple-log-in-window/"/>
-    <id>http://blog.fm7077.ml/2019/05/18/flutter-simple-log-in-window/</id>
+    <link href="http://yoursite.com/2019/05/18/flutter-simple-log-in-window/"/>
+    <id>http://yoursite.com/2019/05/18/flutter-simple-log-in-window/</id>
     <published>2019-05-18T11:51:20.000Z</published>
     <updated>2019-05-20T09:58:49.569Z</updated>
     
@@ -85,21 +85,21 @@
     
     </summary>
     
-      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+      <category term="flutter" scheme="http://yoursite.com/categories/flutter/"/>
     
     
-      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
+      <category term="flutter" scheme="http://yoursite.com/tags/flutter/"/>
     
-      <category term="demo" scheme="http://blog.fm7077.ml/tags/demo/"/>
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="TODO" scheme="http://yoursite.com/tags/TODO/"/>
     
   </entry>
   
   <entry>
     <title>Flutter 里的坑</title>
-    <link href="http://blog.fm7077.ml/2019/05/16/issues-in-flutter/"/>
-    <id>http://blog.fm7077.ml/2019/05/16/issues-in-flutter/</id>
+    <link href="http://yoursite.com/2019/05/16/issues-in-flutter/"/>
+    <id>http://yoursite.com/2019/05/16/issues-in-flutter/</id>
     <published>2019-05-16T11:59:49.000Z</published>
     <updated>2019-05-19T11:26:53.964Z</updated>
     
@@ -111,21 +111,21 @@
     
     </summary>
     
-      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+      <category term="flutter" scheme="http://yoursite.com/categories/flutter/"/>
     
     
-      <category term="issues" scheme="http://blog.fm7077.ml/tags/issues/"/>
+      <category term="issues" scheme="http://yoursite.com/tags/issues/"/>
     
   </entry>
   
   <entry>
     <title>初试 Flutter</title>
-    <link href="http://blog.fm7077.ml/2019/05/12/hello-flutter/"/>
-    <id>http://blog.fm7077.ml/2019/05/12/hello-flutter/</id>
+    <link href="http://yoursite.com/2019/05/12/hello-flutter/"/>
+    <id>http://yoursite.com/2019/05/12/hello-flutter/</id>
     <published>2019-05-12T08:17:40.000Z</published>
     <updated>2019-05-12T11:25:43.247Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>坑太多了</p></blockquote><a id="more"></a><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>突然抽风要试试 Flutter. 然后就一路踩着坑过来了.</p><p>系统: win10 1803</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了.</p><ol><li><p><a href="https://flutter.dev/docs/get-started/install" target="_blank" rel="noopener">Flutter 下载地址</a> 谷歌非常良心地提供了中国专用下载地址.</p></li><li><p>解压下载后的压缩包到一个不需要管理员权限地地址</p></li><li><p>进入 ~/flutter/bin 复制地址</p></li><li><p>系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 )</p><p> 打开 powershell 输入 flutter doctor 可看到检测信息</p></li><li><p>用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: <a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p><p>PUB_HOSTED_URL 值为: <a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p><p>这一步是方便国内下载库什么的</p></li><li><p>vs code 中安装 dart, flutter 这两个插件</p></li><li><p>ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化</p><p> 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器.</p></li></ol><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>Flutter 入门的坑太多了.</p><h2 id="卡在-flutter-packages-get"><a href="#卡在-flutter-packages-get" class="headerlink" title="卡在 flutter packages get"></a>卡在 flutter packages get</h2><p>这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 <a href="https://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/">博文</a> ), 然后输入 flutter packages get, 等待下完</p><h2 id="卡在-installing-build-app-outputs-apk-app-apk"><a href="#卡在-installing-build-app-outputs-apk-app-apk" class="headerlink" title="卡在 installing build\app\outputs\apk\app.apk"></a>卡在 installing build\app\outputs\apk\app.apk</h2><p>在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效.</p><p>在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按.</p><p><em>更新</em>: 这时由于在上一个 issue 中设置了代理造成的. 关闭代理后, 在 terminal 中输入 flutter run 可看到程序正常安装运行, 同时可按 r 进行 hot reload</p><p>但按 f5 运行后还是有同样的问题, csdn 上看到这篇<a href="https://blog.csdn.net/weixin_34033624/article/details/87563259" target="_blank" rel="noopener">博文</a> 照做了一下</p><p>咦, 重启了一下 vs code 就好了, 真实神奇. 有知道原因的同学麻烦评论一下.</p><blockquote><p>其实 problems 中之前还出现了: cannot download from xxxxx(忘了地址了). 不知道跟这个有没有关系</p></blockquote><h2 id="卡在creating-flutter-project"><a href="#卡在creating-flutter-project" class="headerlink" title="卡在creating flutter project"></a>卡在creating flutter project</h2><p>这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙.</p><p>解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>坑太多了</p></blockquote><a id="more"></a><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>突然抽风要试试 Flutter. 然后就一路踩着坑过来了.</p><p>系统: win10 1803</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于之前已经装好了 git, android studio, vs code, idea. 这里就不赘述了.</p><ol><li><p><a href="https://flutter.dev/docs/get-started/install" target="_blank" rel="noopener">Flutter 下载地址</a> 谷歌非常良心地提供了中国专用下载地址.</p></li><li><p>解压下载后的压缩包到一个不需要管理员权限地地址</p></li><li><p>进入 ~/flutter/bin 复制地址</p></li><li><p>系统变量和用户变量中的 path 添加步骤3复制的地址 ( 看别人写的好像只要用户变量就可以了 )</p><p> 打开 powershell 输入 flutter doctor 可看到检测信息</p></li><li><p>用户变量添加: FLUTTER_STORAGE_BASE_URL 值为: <a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p><p>PUB_HOSTED_URL 值为: <a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p><p>这一步是方便国内下载库什么的</p></li><li><p>vs code 中安装 dart, flutter 这两个插件</p></li><li><p>ctrl+shift+p 输入 flutter, 选择 Flutter: New Project, 输入工程名, 选择存储位置. 等待初始化</p><p> 完成后按 f5 启动, 等待机器出行那个 demo. 注意右下角要选中机器.</p></li></ol><h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>Flutter 入门的坑太多了.</p><h2 id="卡在-flutter-packages-get"><a href="#卡在-flutter-packages-get" class="headerlink" title="卡在 flutter packages get"></a>卡在 flutter packages get</h2><p>这是因为被墙了, 先 x 掉这个任务, 然后在 terminal 中设置代理( 参考之前的 <a href="https://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/" target="_blank" rel="noopener">博文</a> ), 然后输入 flutter packages get, 等待下完</p><h2 id="卡在-installing-build-app-outputs-apk-app-apk"><a href="#卡在-installing-build-app-outputs-apk-app-apk" class="headerlink" title="卡在 installing build\app\outputs\apk\app.apk"></a>卡在 installing build\app\outputs\apk\app.apk</h2><p>在 vs code 中, 运行时不知道为什么会卡在这里. 程序能正常安装到手机上, 但自动打开的是个白色页面, 得手动清楚后台在打开 app 才能正常显示. 然后 console 就一直显示 installing build\app\outputs\apk\app.apk. 这时点击 Hot reload 无效.</p><p>在 android studio 上点击运行后程序正常安装也正常显示, 但和 vs code 中一样的问题. 同时 reload 按钮无法按.</p><p><em>更新</em>: 这时由于在上一个 issue 中设置了代理造成的. 关闭代理后, 在 terminal 中输入 flutter run 可看到程序正常安装运行, 同时可按 r 进行 hot reload</p><p>但按 f5 运行后还是有同样的问题, csdn 上看到这篇<a href="https://blog.csdn.net/weixin_34033624/article/details/87563259" target="_blank" rel="noopener">博文</a> 照做了一下</p><p>咦, 重启了一下 vs code 就好了, 真实神奇. 有知道原因的同学麻烦评论一下.</p><blockquote><p>其实 problems 中之前还出现了: cannot download from xxxxx(忘了地址了). 不知道跟这个有没有关系</p></blockquote><h2 id="卡在creating-flutter-project"><a href="#卡在creating-flutter-project" class="headerlink" title="卡在creating flutter project"></a>卡在creating flutter project</h2><p>这个问题发生在 android studio 上. 应该是被墙了, 但不知道怎么给 flutter 设置翻墙.</p><p>解决办法是在 vs code 上新建, 或者通过 powershell 新建, 然后用 as 打开. 这也太蠢了. 还是直接用 vs code 好了.</p>]]></content>
     
     <summary type="html">
     
@@ -135,25 +135,25 @@
     
     </summary>
     
-      <category term="flutter" scheme="http://blog.fm7077.ml/categories/flutter/"/>
+      <category term="flutter" scheme="http://yoursite.com/categories/flutter/"/>
     
     
-      <category term="flutter" scheme="http://blog.fm7077.ml/tags/flutter/"/>
+      <category term="flutter" scheme="http://yoursite.com/tags/flutter/"/>
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="TODO" scheme="http://yoursite.com/tags/TODO/"/>
     
-      <category term="android" scheme="http://blog.fm7077.ml/tags/android/"/>
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>在 firebase 上部署 hexo 静态博客</title>
-    <link href="http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/"/>
-    <id>http://blog.fm7077.ml/2019/04/30/hexo-deploy-on-firebase/</id>
+    <link href="http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/"/>
+    <id>http://yoursite.com/2019/04/30/hexo-deploy-on-firebase/</id>
     <published>2019-04-30T04:37:54.000Z</published>
     <updated>2019-04-30T06:55:07.390Z</updated>
     
-    <content type="html"><![CDATA[<p>firebase 是股沟的一个 app 和 web 应用程序开发平台, 可以在上面部署静态博客.</p><p>本文主要 <a href="https://blog.erguotou.me/hexo-on-firebase.html" target="_blank" rel="noopener">参考链接</a></p><p>参考链接里有些东西</p><a id="more"></a><h1 id="注册-firebase-创建新项目"><a href="#注册-firebase-创建新项目" class="headerlink" title="注册 firebase, 创建新项目"></a>注册 firebase, 创建新项目</h1><p><a href="[https://console.firebase.google.com](https://console.firebase.google.com/">firebase 官网</a>)</p><p>按照提示创建, 这里没什么难度.</p><h2 id="关于自定义域名-如果没有跳过这一步"><a href="#关于自定义域名-如果没有跳过这一步" class="headerlink" title="关于自定义域名( 如果没有跳过这一步 )"></a>关于自定义域名( 如果没有跳过这一步 )</h2><p>firebase 默认提供了一个 项目id.firebaseapp.com 的域名.</p><p>要关联自己的域名的话</p><ol><li><p>在 开发/Hosting 中点击 “关联域名”</p></li><li><p>填写顶级域名( domain.com ), 或子域名( child.domain.com )</p></li><li><p>在 DNS 提供商( 一般域名服务商也有这功能 ) 填写 TXT 记录:</p><p> 如我在 freenom 买的域名, 在域名的 DNS management 页面中填写</p><p> name: 子域名或不填代表顶级域名( child/null )</p><p> type: TXT</p><p> target: 谷歌提供的一个验证码</p><p> 验证</p></li><li><p>成功后谷歌会给出两个 ip 地址, 跟步骤3类似填入 DNS 管理页面中. type 为A</p></li><li><p>坐等谷歌部署证书.</p></li></ol><h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>关于 hexo 具体内容见 👉 <a href="https://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/">链接</a>. (这里只需要在一个文件夹中 clone hexo 就可以了)</p><p>在 hexo 项目文件夹中打开 powershell 输入</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install -g firebase-tools</span><br><span class="line"><span class="comment"># 安装后登录, powershell 翻墙问题见文末</span></span><br><span class="line">firebase login --no-localhost</span><br><span class="line"><span class="comment"># 问题选 y, 此时自动跳转到浏览器, 请求授权, 授权后复制那串认证码, 粘贴到 powershell 回车.</span></span><br><span class="line"><span class="comment"># 成功的话会显示 Success! Logged in as xxxx@gmail.com</span></span><br><span class="line">firebase init</span><br><span class="line"><span class="comment"># 问题回答 y</span></span><br><span class="line"><span class="comment"># 空格选中 Configure and deploy Firebase Hosting sites 回车</span></span><br><span class="line"><span class="comment"># 选择项目</span></span><br><span class="line"><span class="comment"># 选择文件夹( 默认的 public 就对了 )</span></span><br><span class="line"><span class="comment"># 是否将链接都导向 /index.html, 看个人喜好选 y/n</span></span><br><span class="line"><span class="comment"># 是否覆盖 public/index.html 回答 N</span></span><br></pre></td></tr></table></figure><p>我配置好后的 firebase.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"hosting"</span>: &#123;</span><br><span class="line">    <span class="attr">"public"</span>: <span class="string">"public"</span>,</span><br><span class="line">    <span class="attr">"ignore"</span>: [</span><br><span class="line">      <span class="string">"firebase.json"</span>,</span><br><span class="line">      <span class="string">"**/.*"</span>,</span><br><span class="line">      <span class="string">"**/node_modules/**"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 每次都 clean 一下</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line"><span class="comment"># 此处也需要翻墙</span></span><br><span class="line">firebase deploy</span><br><span class="line"><span class="comment"># 等待成功后, 在浏览器输入地址查看</span></span><br></pre></td></tr></table></figure><h1 id="powershell-翻墙"><a href="#powershell-翻墙" class="headerlink" title="powershell 翻墙"></a>powershell 翻墙</h1><blockquote><p> <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a></p><p> <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-6#the-profile-files" target="_blank" rel="noopener">微软文档</a></p></blockquote><p>在 powershell 中输入</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Profile</span></span><br></pre></td></tr></table></figure><p>他会返回一个文件的路径. 根据这个路径找到这个文件, 如果没有则创建它, 中间缺失的文件夹也创建.</p><p>然后在文末添加 <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a> 中的代码, 保存, 关闭.</p><p>在 powershell 中 输入 set-proxy ‘<a href="http://127.0.0.1:1080&#39;" target="_blank" rel="noopener">http://127.0.0.1:1080&#39;</a> ( 此处为 ssr/ss 的本地代理地址与端口, 按照实际情况填 )</p><p>更多详情见 <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a></p><p>如果遇到 “此系统上禁止运行脚本xxxxxxxxx”</p><p>则用管理员身份打开 powershell, 输入set-executionpolicy remotesigned 按须选择 y 或 a</p>]]></content>
+    <content type="html"><![CDATA[<p>firebase 是股沟的一个 app 和 web 应用程序开发平台, 可以在上面部署静态博客.</p><p>本文主要 <a href="https://blog.erguotou.me/hexo-on-firebase.html" target="_blank" rel="noopener">参考链接</a></p><p>参考链接里有些东西</p><a id="more"></a><h1 id="注册-firebase-创建新项目"><a href="#注册-firebase-创建新项目" class="headerlink" title="注册 firebase, 创建新项目"></a>注册 firebase, 创建新项目</h1><p><a href="[https://console.firebase.google.com](https://console.firebase.google.com/">firebase 官网</a>)</p><p>按照提示创建, 这里没什么难度.</p><h2 id="关于自定义域名-如果没有跳过这一步"><a href="#关于自定义域名-如果没有跳过这一步" class="headerlink" title="关于自定义域名( 如果没有跳过这一步 )"></a>关于自定义域名( 如果没有跳过这一步 )</h2><p>firebase 默认提供了一个 项目id.firebaseapp.com 的域名.</p><p>要关联自己的域名的话</p><ol><li><p>在 开发/Hosting 中点击 “关联域名”</p></li><li><p>填写顶级域名( domain.com ), 或子域名( child.domain.com )</p></li><li><p>在 DNS 提供商( 一般域名服务商也有这功能 ) 填写 TXT 记录:</p><p> 如我在 freenom 买的域名, 在域名的 DNS management 页面中填写</p><p> name: 子域名或不填代表顶级域名( child/null )</p><p> type: TXT</p><p> target: 谷歌提供的一个验证码</p><p> 验证</p></li><li><p>成功后谷歌会给出两个 ip 地址, 跟步骤3类似填入 DNS 管理页面中. type 为A</p></li><li><p>坐等谷歌部署证书.</p></li></ol><h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><p>关于 hexo 具体内容见 👉 <a href="https://blog.fm7077.ml/2018/09/03/how_to_build_your_own_blog_website/" target="_blank" rel="noopener">链接</a>. (这里只需要在一个文件夹中 clone hexo 就可以了)</p><p>在 hexo 项目文件夹中打开 powershell 输入</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install -g firebase-tools</span><br><span class="line"><span class="comment"># 安装后登录, powershell 翻墙问题见文末</span></span><br><span class="line">firebase login --no-localhost</span><br><span class="line"><span class="comment"># 问题选 y, 此时自动跳转到浏览器, 请求授权, 授权后复制那串认证码, 粘贴到 powershell 回车.</span></span><br><span class="line"><span class="comment"># 成功的话会显示 Success! Logged in as xxxx@gmail.com</span></span><br><span class="line">firebase init</span><br><span class="line"><span class="comment"># 问题回答 y</span></span><br><span class="line"><span class="comment"># 空格选中 Configure and deploy Firebase Hosting sites 回车</span></span><br><span class="line"><span class="comment"># 选择项目</span></span><br><span class="line"><span class="comment"># 选择文件夹( 默认的 public 就对了 )</span></span><br><span class="line"><span class="comment"># 是否将链接都导向 /index.html, 看个人喜好选 y/n</span></span><br><span class="line"><span class="comment"># 是否覆盖 public/index.html 回答 N</span></span><br></pre></td></tr></table></figure><p>我配置好后的 firebase.json</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"hosting"</span>: &#123;</span><br><span class="line">    <span class="attr">"public"</span>: <span class="string">"public"</span>,</span><br><span class="line">    <span class="attr">"ignore"</span>: [</span><br><span class="line">      <span class="string">"firebase.json"</span>,</span><br><span class="line">      <span class="string">"**/.*"</span>,</span><br><span class="line">      <span class="string">"**/node_modules/**"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后执行</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 每次都 clean 一下</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line"><span class="comment"># 此处也需要翻墙</span></span><br><span class="line">firebase deploy</span><br><span class="line"><span class="comment"># 等待成功后, 在浏览器输入地址查看</span></span><br></pre></td></tr></table></figure><h1 id="powershell-翻墙"><a href="#powershell-翻墙" class="headerlink" title="powershell 翻墙"></a>powershell 翻墙</h1><blockquote><p> <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a></p><p> <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-6#the-profile-files" target="_blank" rel="noopener">微软文档</a></p></blockquote><p>在 powershell 中输入</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Profile</span></span><br></pre></td></tr></table></figure><p>他会返回一个文件的路径. 根据这个路径找到这个文件, 如果没有则创建它, 中间缺失的文件夹也创建.</p><p>然后在文末添加 <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a> 中的代码, 保存, 关闭.</p><p>在 powershell 中 输入 set-proxy ‘<a href="http://127.0.0.1:1080&#39;" target="_blank" rel="noopener">http://127.0.0.1:1080&#39;</a> ( 此处为 ssr/ss 的本地代理地址与端口, 按照实际情况填 )</p><p>更多详情见 <a href="https://async.sh/2018/07/30/quick-setup-http-proxy-using-powershell-profile/" target="_blank" rel="noopener">参考链接</a></p><p>如果遇到 “此系统上禁止运行脚本xxxxxxxxx”</p><p>则用管理员身份打开 powershell, 输入set-executionpolicy remotesigned 按须选择 y 或 a</p>]]></content>
     
     <summary type="html">
     
@@ -163,23 +163,23 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="hexo" scheme="http://blog.fm7077.ml/tags/hexo/"/>
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
-      <category term="firebase" scheme="http://blog.fm7077.ml/tags/firebase/"/>
+      <category term="firebase" scheme="http://yoursite.com/tags/firebase/"/>
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="翻墙" scheme="http://blog.fm7077.ml/tags/%E7%BF%BB%E5%A2%99/"/>
+      <category term="翻墙" scheme="http://yoursite.com/tags/%E7%BF%BB%E5%A2%99/"/>
     
   </entry>
   
   <entry>
     <title>mysql 用户与权限</title>
-    <link href="http://blog.fm7077.ml/2019/04/20/mysql-user-permission/"/>
-    <id>http://blog.fm7077.ml/2019/04/20/mysql-user-permission/</id>
+    <link href="http://yoursite.com/2019/04/20/mysql-user-permission/"/>
+    <id>http://yoursite.com/2019/04/20/mysql-user-permission/</id>
     <published>2019-04-20T07:44:27.000Z</published>
     <updated>2019-04-21T08:52:52.732Z</updated>
     
@@ -193,17 +193,17 @@
     
     </summary>
     
-      <category term="mysql" scheme="http://blog.fm7077.ml/categories/mysql/"/>
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>部署 war 到 tomcat</title>
-    <link href="http://blog.fm7077.ml/2019/04/19/deploy-war-on-tomcat/"/>
-    <id>http://blog.fm7077.ml/2019/04/19/deploy-war-on-tomcat/</id>
+    <link href="http://yoursite.com/2019/04/19/deploy-war-on-tomcat/"/>
+    <id>http://yoursite.com/2019/04/19/deploy-war-on-tomcat/</id>
     <published>2019-04-18T23:29:43.000Z</published>
     <updated>2019-04-18T23:39:07.740Z</updated>
     
@@ -218,21 +218,21 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="war" scheme="http://blog.fm7077.ml/tags/war/"/>
+      <category term="war" scheme="http://yoursite.com/tags/war/"/>
     
-      <category term="tomcat" scheme="http://blog.fm7077.ml/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://yoursite.com/tags/tomcat/"/>
     
-      <category term="web" scheme="http://blog.fm7077.ml/tags/web/"/>
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>python 和 mysql 互动</title>
-    <link href="http://blog.fm7077.ml/2019/04/17/python-mysql/"/>
-    <id>http://blog.fm7077.ml/2019/04/17/python-mysql/</id>
+    <link href="http://yoursite.com/2019/04/17/python-mysql/"/>
+    <id>http://yoursite.com/2019/04/17/python-mysql/</id>
     <published>2019-04-17T14:51:23.000Z</published>
     <updated>2019-04-17T14:57:26.428Z</updated>
     
@@ -246,19 +246,19 @@
     
     </summary>
     
-      <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="mysql" scheme="http://blog.fm7077.ml/tags/mysql/"/>
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
-      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>用 Python 读取 csv 文件( 包括一丁点 python 使用教程)</title>
-    <link href="http://blog.fm7077.ml/2019/04/16/python-read-csv/"/>
-    <id>http://blog.fm7077.ml/2019/04/16/python-read-csv/</id>
+    <link href="http://yoursite.com/2019/04/16/python-read-csv/"/>
+    <id>http://yoursite.com/2019/04/16/python-read-csv/</id>
     <published>2019-04-16T11:23:48.000Z</published>
     <updated>2019-04-17T06:20:32.693Z</updated>
     
@@ -275,19 +275,19 @@
     
     </summary>
     
-      <category term="python" scheme="http://blog.fm7077.ml/categories/python/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="python" scheme="http://blog.fm7077.ml/tags/python/"/>
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
-      <category term="csv" scheme="http://blog.fm7077.ml/tags/csv/"/>
+      <category term="csv" scheme="http://yoursite.com/tags/csv/"/>
     
   </entry>
   
   <entry>
     <title>Echarts</title>
-    <link href="http://blog.fm7077.ml/2019/04/15/react-vis/"/>
-    <id>http://blog.fm7077.ml/2019/04/15/react-vis/</id>
+    <link href="http://yoursite.com/2019/04/15/react-vis/"/>
+    <id>http://yoursite.com/2019/04/15/react-vis/</id>
     <published>2019-04-15T00:12:59.000Z</published>
     <updated>2019-04-17T04:07:24.862Z</updated>
     
@@ -302,21 +302,21 @@
     
     </summary>
     
-      <category term="javascript" scheme="http://blog.fm7077.ml/categories/javascript/"/>
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
     
     
-      <category term="js" scheme="http://blog.fm7077.ml/tags/js/"/>
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
-      <category term="可视化" scheme="http://blog.fm7077.ml/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+      <category term="可视化" scheme="http://yoursite.com/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
-      <category term="Echarts" scheme="http://blog.fm7077.ml/tags/Echarts/"/>
+      <category term="Echarts" scheme="http://yoursite.com/tags/Echarts/"/>
     
   </entry>
   
   <entry>
     <title>关于 select2</title>
-    <link href="http://blog.fm7077.ml/2019/04/12/select2/"/>
-    <id>http://blog.fm7077.ml/2019/04/12/select2/</id>
+    <link href="http://yoursite.com/2019/04/12/select2/"/>
+    <id>http://yoursite.com/2019/04/12/select2/</id>
     <published>2019-04-12T06:59:05.000Z</published>
     <updated>2019-04-17T04:07:36.240Z</updated>
     
@@ -332,19 +332,19 @@
     
     </summary>
     
-      <category term="javascript" scheme="http://blog.fm7077.ml/categories/javascript/"/>
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
     
     
-      <category term="js" scheme="http://blog.fm7077.ml/tags/js/"/>
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
-      <category term="select2" scheme="http://blog.fm7077.ml/tags/select2/"/>
+      <category term="select2" scheme="http://yoursite.com/tags/select2/"/>
     
   </entry>
   
   <entry>
     <title>微信企业向个人转账</title>
-    <link href="http://blog.fm7077.ml/2019/04/02/wechat-mch-pay/"/>
-    <id>http://blog.fm7077.ml/2019/04/02/wechat-mch-pay/</id>
+    <link href="http://yoursite.com/2019/04/02/wechat-mch-pay/"/>
+    <id>http://yoursite.com/2019/04/02/wechat-mch-pay/</id>
     <published>2019-04-02T05:47:41.000Z</published>
     <updated>2019-04-19T08:36:12.422Z</updated>
     
@@ -361,16 +361,16 @@
     </summary>
     
     
-      <category term="wechat" scheme="http://blog.fm7077.ml/tags/wechat/"/>
+      <category term="wechat" scheme="http://yoursite.com/tags/wechat/"/>
     
-      <category term="wechatpay" scheme="http://blog.fm7077.ml/tags/wechatpay/"/>
+      <category term="wechatpay" scheme="http://yoursite.com/tags/wechatpay/"/>
     
   </entry>
   
   <entry>
     <title>mysql_log</title>
-    <link href="http://blog.fm7077.ml/2019/03/14/mysql-log/"/>
-    <id>http://blog.fm7077.ml/2019/03/14/mysql-log/</id>
+    <link href="http://yoursite.com/2019/03/14/mysql-log/"/>
+    <id>http://yoursite.com/2019/03/14/mysql-log/</id>
     <published>2019-03-14T15:58:17.000Z</published>
     <updated>2019-03-14T15:58:17.509Z</updated>
     
@@ -383,8 +383,8 @@
   
   <entry>
     <title>高德地图 JS API</title>
-    <link href="http://blog.fm7077.ml/2019/03/11/gaodeAPI/"/>
-    <id>http://blog.fm7077.ml/2019/03/11/gaodeAPI/</id>
+    <link href="http://yoursite.com/2019/03/11/gaodeAPI/"/>
+    <id>http://yoursite.com/2019/03/11/gaodeAPI/</id>
     <published>2019-03-11T08:26:25.000Z</published>
     <updated>2019-03-11T11:11:04.927Z</updated>
     
@@ -397,8 +397,8 @@
   
   <entry>
     <title>通过 frp 实现内网穿透</title>
-    <link href="http://blog.fm7077.ml/2018/09/21/how_to_use_frp/"/>
-    <id>http://blog.fm7077.ml/2018/09/21/how_to_use_frp/</id>
+    <link href="http://yoursite.com/2018/09/21/how_to_use_frp/"/>
+    <id>http://yoursite.com/2018/09/21/how_to_use_frp/</id>
     <published>2018-09-21T06:14:00.000Z</published>
     <updated>2019-04-17T04:04:41.873Z</updated>
     
@@ -415,47 +415,47 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://blog.fm7077.ml/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="TODO" scheme="http://blog.fm7077.ml/tags/TODO/"/>
+      <category term="TODO" scheme="http://yoursite.com/tags/TODO/"/>
     
-      <category term="博客" scheme="http://blog.fm7077.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="记录" scheme="http://blog.fm7077.ml/tags/%E8%AE%B0%E5%BD%95/"/>
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
-      <category term="内网穿透" scheme="http://blog.fm7077.ml/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+      <category term="内网穿透" scheme="http://yoursite.com/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
     
   </entry>
   
   <entry>
     <title>动态更改微信小程序的背景色</title>
-    <link href="http://blog.fm7077.ml/2018/09/10/change-wechat-small-app-list-background-Dynamically/"/>
-    <id>http://blog.fm7077.ml/2018/09/10/change-wechat-small-app-list-background-Dynamically/</id>
+    <link href="http://yoursite.com/2018/09/10/change-wechat-small-app-list-background-Dynamically/"/>
+    <id>http://yoursite.com/2018/09/10/change-wechat-small-app-list-background-Dynamically/</id>
     <published>2018-09-10T13:20:42.000Z</published>
     <updated>2019-04-17T04:03:11.839Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>如题, 内容继承自 <a href="https://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/">微信小程序里的列表渲染</a></p></blockquote><a id="more"></a><ol><li>在所需动态更改背景色的列表的所属数组里添加一个 background 属性( 随意取名 )</li><li>渲染列表的 wxml 标签中添加: style=”background:;”, 同时绑定一个点击监听事件: bindtap=”tap”</li><li>js 文件中 data 添加一个变量来记录最后一个被点击的 item( 列表的某一行 ), 初始值为 -1, lastSelected: -1</li><li>监听事件里判断上一个被选中 item 是否为 -1( 即没有上一个被选中的 item ), 是的话直接修改当前 item 背景, 否则修改上一个 item 为原色, 并修改现 item 的背景色.</li><li>done</li></ol><p>demo 等有空再做, TODO+1</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>如题, 内容继承自 <a href="https://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/" target="_blank" rel="noopener">微信小程序里的列表渲染</a></p></blockquote><a id="more"></a><ol><li>在所需动态更改背景色的列表的所属数组里添加一个 background 属性( 随意取名 )</li><li>渲染列表的 wxml 标签中添加: style=”background:;”, 同时绑定一个点击监听事件: bindtap=”tap”</li><li>js 文件中 data 添加一个变量来记录最后一个被点击的 item( 列表的某一行 ), 初始值为 -1, lastSelected: -1</li><li>监听事件里判断上一个被选中 item 是否为 -1( 即没有上一个被选中的 item ), 是的话直接修改当前 item 背景, 否则修改上一个 item 为原色, 并修改现 item 的背景色.</li><li>done</li></ol><p>demo 等有空再做, TODO+1</p>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;如题, 内容继承自 &lt;a href=&quot;https://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/&quot;&gt;微信小程序里的列表渲染&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如题, 内容继承自 &lt;a href=&quot;https://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;微信小程序里的列表渲染&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
-      <category term="列表" scheme="http://blog.fm7077.ml/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="列表" scheme="http://yoursite.com/tags/%E5%88%97%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序列表的事件绑定-进阶</title>
-    <link href="http://blog.fm7077.ml/2018/09/09/wx-for-listener/"/>
-    <id>http://blog.fm7077.ml/2018/09/09/wx-for-listener/</id>
+    <link href="http://yoursite.com/2018/09/09/wx-for-listener/"/>
+    <id>http://yoursite.com/2018/09/09/wx-for-listener/</id>
     <published>2018-09-09T11:21:27.000Z</published>
     <updated>2019-04-17T04:08:43.583Z</updated>
     
@@ -470,21 +470,21 @@
     
     </summary>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
-      <category term="列表" scheme="http://blog.fm7077.ml/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="列表" scheme="http://yoursite.com/tags/%E5%88%97%E8%A1%A8/"/>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
-      <category term="监听事件" scheme="http://blog.fm7077.ml/tags/%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6/"/>
+      <category term="监听事件" scheme="http://yoursite.com/tags/%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序里的列表渲染</title>
-    <link href="http://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/"/>
-    <id>http://blog.fm7077.ml/2018/09/06/multi-list-rendering-in-wechat-small-app/</id>
+    <link href="http://yoursite.com/2018/09/06/multi-list-rendering-in-wechat-small-app/"/>
+    <id>http://yoursite.com/2018/09/06/multi-list-rendering-in-wechat-small-app/</id>
     <published>2018-09-06T07:12:59.000Z</published>
     <updated>2019-04-17T04:06:34.323Z</updated>
     
@@ -500,23 +500,23 @@
     
     </summary>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
-      <category term="列表" scheme="http://blog.fm7077.ml/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="列表" scheme="http://yoursite.com/tags/%E5%88%97%E8%A1%A8/"/>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
-      <category term="wx:key" scheme="http://blog.fm7077.ml/tags/wx-key/"/>
+      <category term="wx:key" scheme="http://yoursite.com/tags/wx-key/"/>
     
-      <category term="scroll-view" scheme="http://blog.fm7077.ml/tags/scroll-view/"/>
+      <category term="scroll-view" scheme="http://yoursite.com/tags/scroll-view/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序的 tabbar</title>
-    <link href="http://blog.fm7077.ml/2018/09/06/wechat-small-app-tabbar/"/>
-    <id>http://blog.fm7077.ml/2018/09/06/wechat-small-app-tabbar/</id>
+    <link href="http://yoursite.com/2018/09/06/wechat-small-app-tabbar/"/>
+    <id>http://yoursite.com/2018/09/06/wechat-small-app-tabbar/</id>
     <published>2018-09-06T03:25:33.000Z</published>
     <updated>2019-04-17T04:08:32.858Z</updated>
     
@@ -532,12 +532,12 @@
     
     </summary>
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
-      <category term="微信小程序" scheme="http://blog.fm7077.ml/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="微信小程序" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
-      <category term="tabbar" scheme="http://blog.fm7077.ml/tags/tabbar/"/>
+      <category term="tabbar" scheme="http://yoursite.com/tags/tabbar/"/>
     
   </entry>
   
