@@ -166,11 +166,11 @@
       <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="firebase" scheme="http://yoursite.com/tags/firebase/"/>
-    
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="翻墙" scheme="http://yoursite.com/tags/%E7%BF%BB%E5%A2%99/"/>
     
@@ -249,9 +249,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
