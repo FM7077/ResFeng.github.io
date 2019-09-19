@@ -249,9 +249,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
